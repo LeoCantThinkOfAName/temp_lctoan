@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LCToAN</title>
+
+    <link rel="icon" href="images/icon.png">
+<!--////////////////////STYLESHEET////////////////////-->
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+<!--////////////////////FONTS////////////////////-->
+    <link href="https://fonts.googleapis.com/css?family=Poiret+One" rel="stylesheet">
+    <script type="text/javascript" src="js/script.js"></script>
+</head>
+<body>
+    <div id="vid">
+        <video poster="images/rain_bg.png" id="bgvid" autoplay loop muted>
+            <source src="videos/rain_bg.mp4">
+        </video>
+    </div>
+    
+    <header class="content">
+<!--////////////////////NAVGATOR////////////////////-->
+        <nav id="navbar">
+            <h1><a href="#">LCToAN</a></h1>
+            <button id="navbar_btn">&equiv;</button>
+            <ul id="nav">
+                <li><a>About</a></li>
+                <li><a>Blog</a>
+                    <ul>
+                        <li><a href="#">Notes</a></li>
+                        <li><a href="#">Dairy</a></li>
+                    </ul>
+                </li>
+                <li><a>Works</a></li>
+            </ul>
+        </nav>
+<!--////////////////////NAVIGATOR END////////////////////-->
+
+<!--////////////////////PLAY & PAUSE////////////////////-->
+    <div class="playback">
+        <span onclick="bgvid.play()">&#xf04b;</span>
+        <span onclick="bgvid.pause()">&#xf04c;</span>
+    </div>
+<!--////////////////////PLAY & PAUSE END////////////////////-->
+    </header>
+    <div class="wrapper">
+<!--////////////////////ABOUT////////////////////-->
+        <div class="content" id="about">
+            <img src="images/cm.png" alt="Leo" id="photo" title="It's Me!--">
+            <div id="aboutMe">
+                <h2>Who's Leo?</h2>
+                <br>
+                <hr>
+                <br>
+                <p>
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam non nulla sit amet dui mollis faucibus sed in sem. Mauris et nibh egestas, tincidunt turpis vel, lobortis nunc. Donec volutpat odio eget elementum vehicula. Morbi porttitor mauris ac condimentum congue. Duis quis dui odio. Proin et magna eros. Cras mauris felis, laoreet sit amet malesuada nec, convallis at enim. Nunc gravida lorem in nisl rutrum dapibus accumsan ac lorem. Sed gravida tristique ex quis imperdiet. Nullam gravida velit eget orci mollis malesuada. Aliquam ac elit eu lacus tincidunt facilisis. Vestibulum massa nibh, malesuada non faucibus id, efficitur quis lacus.
+                </p>
+                <br>
+                <hr>
+            </div>
+        </div>
+<!--////////////////////ABOUT END////////////////////-->
+
+<!--////////////////////BLOG////////////////////-->
+        <div class="content" id="blog">
+            <div class="blogWrapper">
+                <div class="preview_img"></div>
+                <div class="preview_txt">
+                    <h3 id="preview_title">Title</h3>
+                    <span id="preview_date">2020/20/20</span>
+                    <p>
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam non nulla sit amet dui mollis faucibus sed in sem. Mauris et nibh egestas, tincidunt turpis vel, lobortis nunc. Donec volutpat odio eget elementum vehicula. Morbi porttitor mauris ac condimentum congue. Duis quis dui odio. Proin et magna eros. Cras mauris felis, laoreet sit amet malesuada nec, convallis at enim. Nunc gravida lorem in nisl rutrum dapibus accumsan ac lorem. Sed gravida tristique ex quis imperdiet. Nullam gravida velit eget orci mollis malesuada. Aliquam ac elit eu lacus tincidunt facilisis. Vestibulum massa nibh, malesuada non faucibus id, efficitur quis lacus. <i><a href="#" class="continue">Continue...</a></i>
+                    </p>
+                </div>
+                <a class="more" href="blog.html">MORE</a>
+            </div>
+        </div>
+<!--////////////////////BLOG END////////////////////-->
+
+<!--////////////////////WORKS////////////////////-->
+        <div class="content" id="works">
+            <div class="worksWrapper">
+                <ul>
+                    <li><a href="#"><img src="images/bg.jpg" alt="works"></a></li>
+                    <li><a href="#"><img src="images/bg.jpg" alt="works"></a></li>
+                    <li><a href="#"><img src="images/bg.jpg" alt="works"></a></li>
+                    <li><a href="#"><img src="images/bg.jpg" alt="works"></a></li>
+                    <li><a href="#"><img src="images/bg.jpg" alt="works"></a></li>
+                    <li><a href="#"><img src="images/bg.jpg" alt="works"></a></li>
+                </ul>
+                <a class="more" href="works.html">MORE</a>
+            </div>
+        </div>
+<!--////////////////////WORKS END////////////////////-->
+<!--////////////////////GO TOP BUTTON////////////////////-->
+    <button type="button" id="goToTop">&utrif;</button>
+<!--////////////////////GO TOP BUTTON END////////////////////-->
+    </div>
+<!--////////////////////FOOTER////////////////////-->
+    <footer>
+        <div class="footerWrapper">
+            <ul>
+                <li><a href="" id="FB">&#xf082;</a></li>
+                <li><a href="" id="GO">&#xf0d4;</a></li>
+                <li><a href="https://www.youtube.com/channel/UCWhftVchWbkGxT4fBAq6Jbw" id="YT" target="_blank">&#xf166;</a></li>
+                <li><a href="mailto: i7851@hotmail.com" id="EM">&#xf199;</a></li>
+            </ul>
+            <div>
+                <p>LeoCantThinkofAName</p>
+                <span>&copy;2016 by Leo Lin, All Rights Reserved</span>
+            </div>
+            </div>
+    </footer>
+<!--////////////////////FOOTER END////////////////////-->
+</body>
+</html>
