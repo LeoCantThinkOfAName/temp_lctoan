@@ -21,10 +21,15 @@
                     <div id="lowerSemi"></div>
                 </div>
             </div>
+
             <div class="planets">
+                <div class="tracks" id="mercuryTrack"></div>
                 <div id="mercury"></div>
+
+                <div class="tracks" id="venusTrack"></div>
                 <div id="venus"></div>
 
+                <div class="tracks" id="earthTrack"></div>
                 <div id="earth">
                     <div class="earthwrapper">
                         <div id="earthUpper"></div>
@@ -33,6 +38,7 @@
                 </div>
                 <div id="moon"></div>
 
+                <div class="tracks" id="marsTrack"></div>
                 <div id="mars">
                     <div class="marWrapper">
                         <div id="marsUpper"></div>
@@ -42,6 +48,7 @@
                 <div id="marsSone"></div>
                 <div id="marsStwo"></div>
                 
+                <div id="jupiterTrack" class="tracks"></div>
                 <div id="jupiter">
                     <div class="jupiterWrapper">
                         <div id="jupiterUpper"></div>
@@ -54,6 +61,7 @@
                 <div id="jupiterSfour"></div>
                 <div id="jupiterSfake"></div>
 
+                <div class="tracks" id="saturnTrack"></div>
                 <div id="saturn">
                     <div class="saturnWrapper">
                         <div id="saturnLower"></div>
@@ -69,6 +77,7 @@
                 <div id="saturnSfour"></div>
                 <div id="saturnSfive"></div>
 
+                <div class="tracks" id="uranusTrack"></div>
                 <div id="uranus">
                     <div class="uranusWrapper">
                         <div id="uranusLower"></div>
@@ -81,6 +90,7 @@
                 <div id="uranusSthree"></div>
                 <div id="uranusSfour"></div>
 
+                <div class="tracks" id="neptuneTrack"></div>
                 <div id="neptune">
                     <div class="neptuneWrapper">
                         <div id="neptuneUpper"></div>
@@ -89,6 +99,7 @@
                 </div>
                 <div id="neptuneSone"></div>
             </div>
+            <div class="planetName">millions upon millions of stars</div>
             <iframe src="https://embed.spotify.com/?uri=spotify%3Aalbum%3A41oPl7Fqk7UngFgZFgPDO0" width="1200" height="300" frameborder="0" allowtransparency="true"></iframe>
         </div>
     </div>
@@ -204,13 +215,13 @@
         var saturnSfour = document.querySelector("#saturnSfour");
         var saturnSfourDis = 40;
         var saturnSfourRad = 0;
-        var saturnSfourSpd = 0.00001 * std;
+        var saturnSfourSpd = 0.00004 * std;
 
         // set saturnSfive
         var saturnSfive = document.querySelector("#saturnSfive");
         var saturnSfiveDis = 55;
         var saturnSfiveRad = 0;
-        var saturnSfiveSpd = 0.000005 * std;
+        var saturnSfiveSpd = 0.00001 * std;
 
         // set uranus
         var uranus = document.querySelector("#uranus");
@@ -606,6 +617,28 @@
         setTimeout(function() {
             content.style.display = "block";
         }, 50);
+
+        // tracks function
+        var nameBlock = document.querySelector(".planetName");
+        var neptuneTrack = document.querySelector("#neptuneTrack");
+        var uranusTrack = document.querySelector("#uranusTrack");
+        var saturnTrack = document.querySelector("#saturnTrack");
+        var jupiterTrack = document.querySelector("#jupiterTrack");
+        var mardTrack = document.querySelector("#mardTrack");
+        var earthTrack = document.querySelector("#earthTrack");
+        var venusTrack = document.querySelector("#venusTrack");
+        var mercuryTrack = document.querySelector("#mercuryTrack");
+
+        neptuneTrack.onmouseover = function() { nameBlock.innerHTML = "Neptune"; };
+        neptuneTrack.onmouseout = function() { nameBlock.innerHTML = "millions upon millions of stars"; };
+        uranusTrack.onmouseover = function() { nameBlock.innerHTML = "Uranus"; };
+        saturnTrack.onmouseover = function() { nameBlock.innerHTML = "Saturn"; };
+        jupiterTrack.onmouseover = function() { nameBlock.innerHTML = "Jupiter"; };
+        marsTrack.onmouseover = function() { nameBlock.innerHTML = "Mars"; };
+        earthTrack.onmouseover = function() { nameBlock.innerHTML = "Earth"; };
+        venusTrack.onmouseover = function() { nameBlock.innerHTML = "Venus"; };
+        mercuryTrack.onmouseover = function() { nameBlock.innerHTML = "Mercury"; };
+        sun.onmouseover = function() { nameBlock.innerHTML = "Sun"; }
     }
 </script>
 
