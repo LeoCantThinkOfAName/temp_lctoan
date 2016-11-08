@@ -1,0 +1,612 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>The Planets</title>
+    <link rel="shortcut icon" href="images/earth.png" type="image/png">
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <link href="https://fonts.googleapis.com/css?family=Yesteryear" rel="stylesheet">
+</head>
+<body>
+    <div class="border">
+        <div class="titleBox">
+            <div class="title">The<br>Planets</div>
+            <div class="leftLine"></div>
+            <div class="rightLine"></div>
+        </div>
+        <div class="container">
+            <div id="sun">
+                <div class="semiWrapper">
+                    <div id="upperSemi"></div>
+                    <div id="lowerSemi"></div>
+                </div>
+            </div>
+            <div class="planets">
+                <div id="mercury"></div>
+                <div id="venus"></div>
+
+                <div id="earth">
+                    <div class="earthwrapper">
+                        <div id="earthUpper"></div>
+                        <div id="earthLower"></div>
+                    </div>
+                </div>
+                <div id="moon"></div>
+
+                <div id="mars">
+                    <div class="marWrapper">
+                        <div id="marsUpper"></div>
+                        <div id="marsLower"></div>
+                    </div>
+                </div>
+                <div id="marsSone"></div>
+                <div id="marsStwo"></div>
+                
+                <div id="jupiter">
+                    <div class="jupiterWrapper">
+                        <div id="jupiterUpper"></div>
+                        <div id="jupiterLower"></div>
+                    </div>
+                </div>
+                <div id="jupiterSone"></div>
+                <div id="jupiterStwo"></div>
+                <div id="jupiterSthree"></div>
+                <div id="jupiterSfour"></div>
+                <div id="jupiterSfake"></div>
+
+                <div id="saturn">
+                    <div class="saturnWrapper">
+                        <div id="saturnLower"></div>
+                        <div id="saturnRimOuter"></div>
+                        <div id="saturnRim"></div>
+                        <div id="saturnUpper"></div>
+                        <div id="saturnUpperCap"></div>
+                    </div>
+                </div>
+                <div id="saturnSone"></div>
+                <div id="saturnStwo"></div>
+                <div id="saturnSthree"></div>
+                <div id="saturnSfour"></div>
+                <div id="saturnSfive"></div>
+
+                <div id="uranus">
+                    <div class="uranusWrapper">
+                        <div id="uranusLower"></div>
+                        <div id="uranusRim"></div>
+                        <div id="uranusUpper"></div>
+                    </div>
+                </div>
+                <div id="uranusSone"></div>
+                <div id="uranusStwo"></div>
+                <div id="uranusSthree"></div>
+                <div id="uranusSfour"></div>
+
+                <div id="neptune">
+                    <div class="neptuneWrapper">
+                        <div id="neptuneUpper"></div>
+                        <div id="neptuneLower"></div>
+                    </div>
+                </div>
+                <div id="neptuneSone"></div>
+            </div>
+            <iframe src="https://embed.spotify.com/?uri=spotify%3Aalbum%3A41oPl7Fqk7UngFgZFgPDO0" width="1200" height="300" frameborder="0" allowtransparency="true"></iframe>
+        </div>
+    </div>
+</body>
+
+<script>
+    window.onload = function() {
+        var sun = document.querySelector("#sun");
+        var std = 365;
+        // set mercury
+        var mercury = document.querySelector("#mercury");
+        var mercuryDis = 60;
+        var mercuryRad = 0;
+        var mercurySpd = 0.00005 * (std * 5.4);
+
+        // set venus
+        var venus = document.querySelector("#venus");
+        var venusDis = 80;
+        var venusRad = 0;
+        var venusSpd = 0.00005 * (std * 1.6);
+
+        // set earth
+        var earth = document.querySelector("#earth");
+        var earthDis = 100;
+        var earthRad = 0;
+        var earthSpd = 0.00005 * std;
+
+        // set moon
+        var moon = document.querySelector("#moon");
+        var moonDis = 11;
+        var moonRad = 0;
+        var moonSpd = 0.001 * std;
+
+        // set mars
+        var mars = document.querySelector("#mars");
+        var marsDis = 130;
+        var marsRad = 0;
+        var marsSpd = 0.00005 * (std / 2);
+
+        // set mars satellite 1
+        var marsSone = document.querySelector("#marsSone");
+        var marsSoneDis = 11;
+        var marsSoneRad = 0;
+        var marsSoneSpd = 0.0005 * std;
+
+        // set mars satellite 2
+        var marsStwo = document.querySelector("#marsStwo");
+        var marsStwoDis = 10;
+        var marsStwoRad = 0;
+        var marsStwoSpd = 0.001 * std;
+
+        // set jupiter
+        var jupiter = document.querySelector("#jupiter");
+        var jupiterDis = 220;
+        var jupiterRad = 0;
+        var jupiterSpd = 0.00005 * (std / 12);
+
+        // set jupiterSone
+        var jupiterSone = document.querySelector("#jupiterSone");
+        var jupiterSoneDis = 24;
+        var jupiterSoneRad = 0;
+        var jupiterSoneSpd = 0.0005 * std;
+
+        // set jupiterStwo
+        var jupiterStwo = document.querySelector("#jupiterStwo");
+        var jupiterStwoDis = 26;
+        var jupiterStwoRad = 0;
+        var jupiterStwoSpd = 0.0002 * std;
+
+        // set jupiterSthree
+        var jupiterSthree = document.querySelector("#jupiterSthree");
+        var jupiterSthreeDis = 32;
+        var jupiterSthreeRad = 0;
+        var jupiterSthreeSpd = 0.00003 * std;
+
+        // set jupiterSfour
+        var jupiterSfour = document.querySelector("#jupiterSfour");
+        var jupiterSfourDis = 35;
+        var jupiterSfourRad = 0;
+        var jupiterSfourSpd = 0.00001 * std;
+
+        // set jupiterSfake
+        var jupiterSfake = document.querySelector("#jupiterSfake");
+        var jupiterSfakeDis = 28;
+        var jupiterSfakeRad = 0;
+        var jupiterSfakeSpd = 0.0008 * std;
+
+        // set saturn
+        var saturn = document.querySelector("#saturn");
+        var saturnDis = 330;
+        var saturnRad = 0;
+        var saturnSpd = 0.00005 * (std / 29);
+
+        // set saturnSone
+        var saturnSone = document.querySelector("#saturnSone");
+        var saturnSoneDis = 30;
+        var saturnSoneRad = 0;
+        var saturnSoneSpd = 0.00003 * std;
+
+        // set saturnStwo
+        var saturnStwo = document.querySelector("#saturnStwo");
+        var saturnStwoDis = 45;
+        var saturnStwoRad = 0;
+        var saturnStwoSpd = 0.00002 * std;
+
+        // set saturnSthree
+        var saturnSthree = document.querySelector("#saturnSthree");
+        var saturnSthreeDis = 25;
+        var saturnSthreeRad = 0;
+        var saturnSthreeSpd = 0.0006 * std;
+
+        // set saturnSfour
+        var saturnSfour = document.querySelector("#saturnSfour");
+        var saturnSfourDis = 40;
+        var saturnSfourRad = 0;
+        var saturnSfourSpd = 0.00001 * std;
+
+        // set saturnSfive
+        var saturnSfive = document.querySelector("#saturnSfive");
+        var saturnSfiveDis = 55;
+        var saturnSfiveRad = 0;
+        var saturnSfiveSpd = 0.000005 * std;
+
+        // set uranus
+        var uranus = document.querySelector("#uranus");
+        var uranusDis = 450;
+        var uranusRad = 0;
+        var uranusSpd = 0.00005 * (std / 84);
+
+        // set uranusSone
+        var uranusSone = document.querySelector("#uranusSone");
+        var uranusSoneDis = 25;
+        var uranusSoneRad = 0;
+        var uranusSoneSpd = 0.0001 * std;
+
+        // set uranusStwo
+        var uranusStwo = document.querySelector("#uranusStwo");
+        var uranusStwoDis = 35;
+        var uranusStwoRad = 0;
+        var uranusStwoSpd = 0.00004 * std;
+
+        // set uranusSthree
+        var uranusSthree = document.querySelector("#uranusSthree");
+        var uranusSthreeDis = 15;
+        var uranusSthreeRad = 0;
+        var uranusSthreeSpd = 0.0007 * std;
+
+        // set uranusSfour
+        var uranusSfour = document.querySelector("#uranusSfour");
+        var uranusSfourDis = 45;
+        var uranusSfourRad = 0;
+        var uranusSfourSpd = 0.00001 * std;
+
+        // set neptune
+        var neptune = document.querySelector("#neptune");
+        var neptuneDis = 550;
+        var neptuneRad = 0;
+        var neptuneSpd = 0.00005 * (std / 248);
+
+        // set neptuneSone
+        var neptuneSone = document.querySelector("#neptuneSone");
+        var neptuneSoneDis = 11;
+        var neptuneSoneRad = 0;
+        var neptuneSoneSpd = 0.0002 * std;
+
+        // set center
+        sun.style.left = "550px";
+        sun.style.top = "200px";
+
+        // move mercury
+        setInterval(function() {
+            if(mercuryRad < Math.PI * 2) {
+                mercuryRad += mercurySpd;
+            } else {
+                mercuryRad = 0;
+            }
+            setPosition(mercuryRad, mercuryDis, mercury, 5);
+        }, 10);
+        
+        // move venus
+        setInterval(function() {
+            if(venusRad < Math.PI * 2) {
+                venusRad += venusSpd;
+            } else {
+                venusRad = 0;
+            }
+            setPosition(venusRad, venusDis, venus, 5);
+        }, 10);
+
+        // move earth
+        setInterval(function() {
+            if(earthRad < Math.PI * 2) {
+                earthRad += marsSpd;
+            } else {
+                earthRad = 0;
+            }
+            setPosition(earthRad, marsDis, mars, 6);
+        }, 10);
+
+        // move moon
+        setInterval(function() {
+            if(moonRad < Math.PI * 2) {
+                moonRad += moonSpd;
+            } else {
+                moonRad = 0;
+            }
+            var x = parseInt(earth.style.left) + Math.cos(moonRad) * moonDis;
+            var y = parseInt(earth.style.top) + Math.sin(moonRad) * moonDis / 5;
+
+            moon.style.left = x + 5 + "px";
+            moon.style.top = y + 6 + "px";
+        }, 10);
+
+        // move mars
+        setInterval(function() {
+            if(marsRad < Math.PI * 2) {
+                marsRad += earthSpd;
+            } else {
+                marsRad = 0;
+            }
+            setPosition(marsRad, earthDis, earth, 6);
+        }, 10);
+
+        // move marsSone
+        setInterval(function() {
+            if(marsSoneRad < Math.PI * 2) {
+                marsSoneRad += marsSoneSpd;
+            } else {
+                marsSoneRad = 0;
+            }
+            var x = parseInt(mars.style.left) + Math.cos(marsSoneRad) * marsSoneDis;
+            var y = parseInt(mars.style.top) + Math.sin(marsSoneRad) * marsSoneDis / 5;
+
+            marsSone.style.left = x + 5 + "px";
+            marsSone.style.top = y + 5 + "px";
+        }, 10);
+
+        // move marsStwo
+        setInterval(function() {
+            if(marsStwoRad < Math.PI * 2) {
+                marsStwoRad += marsStwoSpd;
+            } else {
+                marsStwoRad = 0;
+            }
+            var x = parseInt(mars.style.left) + Math.cos(marsStwoRad) * marsStwoDis;
+            var y = parseInt(mars.style.top) + Math.sin(marsStwoRad) * marsStwoDis / 5;
+
+            marsStwo.style.left = x + 5 + "px";
+            marsStwo.style.top = y + 6 + "px";
+        }, 10);
+
+        // move jupiter
+        setInterval(function() {
+            if(jupiterRad < Math.PI * 2) {
+                jupiterRad += jupiterSpd;
+            } else {
+                jupiterRad = 0;
+            }
+            setPosition(jupiterRad, jupiterDis, jupiter, 15);
+        }, 10);
+
+        // move jupiterSone
+        setInterval(function() {
+            if(jupiterSoneRad < Math.PI * 2) {
+                jupiterSoneRad += jupiterSoneSpd;
+            } else {
+                jupiterSoneRad = 0;
+            }
+            var x = parseInt(jupiter.style.left) + Math.cos(jupiterSoneRad) * jupiterSoneDis;
+            var y = parseInt(jupiter.style.top) + Math.sin(jupiterSoneRad) * jupiterSoneDis / 5;
+
+            jupiterSone.style.left = x + 12 + "px";
+            jupiterSone.style.top = y + 13 + "px";
+        }, 10);
+
+        // move jupiterStwo
+        setInterval(function() {
+            if(jupiterStwoRad < Math.PI * 2) {
+                jupiterStwoRad += jupiterStwoSpd;
+            } else {
+                jupiterStwoRad = 0;
+            }
+            var x = parseInt(jupiter.style.left) + Math.cos(jupiterStwoRad) * jupiterStwoDis;
+            var y = parseInt(jupiter.style.top) + Math.sin(jupiterStwoRad) * jupiterStwoDis / 5;
+
+            jupiterStwo.style.left = x + 12 + "px";
+            jupiterStwo.style.top = y + 13 + "px";
+        }, 10);
+
+        // move jupiterSthree
+        setInterval(function() {
+            if(jupiterSthreeRad < Math.PI * 2) {
+                jupiterSthreeRad += jupiterSthreeSpd;
+            } else {
+                jupiterSthreeRad = 0;
+            }
+            var x = parseInt(jupiter.style.left) + Math.cos(jupiterSthreeRad) * jupiterSthreeDis;
+            var y = parseInt(jupiter.style.top) + Math.sin(jupiterSthreeRad) * jupiterSthreeDis / 5;
+
+            jupiterSthree.style.left = x + 12 + "px";
+            jupiterSthree.style.top = y + 13 + "px";
+        }, 10);
+
+        // move jupiterSfour
+        setInterval(function() {
+            if(jupiterSfourRad < Math.PI * 2) {
+                jupiterSfourRad += jupiterSfourSpd;
+            } else {
+                jupiterSfourRad = 0;
+            }
+            var x = parseInt(jupiter.style.left) + Math.cos(jupiterSfourRad) * jupiterSfourDis;
+            var y = parseInt(jupiter.style.top) + Math.sin(jupiterSfourRad) * jupiterSfourDis / 5;
+
+            jupiterSfour.style.left = x + 12 + "px";
+            jupiterSfour.style.top = y + 13 + "px";
+        }, 10);
+
+        // move jupiterSfake
+        setInterval(function() {
+            if(jupiterSfakeRad < Math.PI * 2) {
+                jupiterSfakeRad += jupiterSfakeSpd;
+            } else {
+                jupiterSfakeRad = 0;
+            }
+            var x = parseInt(jupiter.style.left) + Math.cos(jupiterSfakeRad) * jupiterSfakeDis;
+            var y = parseInt(jupiter.style.top) + Math.sin(jupiterSfakeRad) * jupiterSfakeDis / 5;
+
+            jupiterSfake.style.left = x + 12 + "px";
+            jupiterSfake.style.top = y + 13 + "px";
+        }, 10);
+
+        // move saturn
+        setInterval(function() {
+            if(saturnRad < Math.PI * 2) {
+                saturnRad += saturnSpd;
+            } else {
+                saturnRad = 0;
+            }
+            setPosition(saturnRad, saturnDis, saturn, 15);
+        }, 10);
+
+        // move saturnSone
+        setInterval(function() {
+            if(saturnSoneRad < Math.PI * 2) {
+                saturnSoneRad += saturnSoneSpd;
+            } else {
+                saturnSoneRad = 0;
+            }
+            var x = parseInt(saturn.style.left) + Math.cos(saturnSoneRad) * saturnSoneDis;
+            var y = parseInt(saturn.style.top) + Math.sin(saturnSoneRad) * saturnSoneDis / 5;
+
+            saturnSone.style.left = x + 22 + "px";
+            saturnSone.style.top = y + 10 + "px";
+        }, 10);
+
+        // move saturnStwo
+        setInterval(function() {
+            if(saturnStwoRad < Math.PI * 2) {
+                saturnStwoRad += saturnStwoSpd;
+            } else {
+                saturnStwoRad = 0;
+            }
+            var x = parseInt(saturn.style.left) + Math.cos(saturnStwoRad) * saturnStwoDis;
+            var y = parseInt(saturn.style.top) + Math.sin(saturnStwoRad) * saturnStwoDis / 5;
+
+            saturnStwo.style.left = x + 22 + "px";
+            saturnStwo.style.top = y + 10 + "px";
+        }, 10);
+
+        // move saturnSthree
+        setInterval(function() {
+            if(saturnSthreeRad < Math.PI * 2) {
+                saturnSthreeRad += saturnSthreeSpd;
+            } else {
+                saturnSthreeRad = 0;
+            }
+            var x = parseInt(saturn.style.left) + Math.cos(saturnSthreeRad) * saturnSthreeDis;
+            var y = parseInt(saturn.style.top) + Math.sin(saturnSthreeRad) * saturnSthreeDis / 5;
+
+            saturnSthree.style.left = x + 24 + "px";
+            saturnSthree.style.top = y + 11 + "px";
+        }, 10);
+
+        // move saturnSfour
+        setInterval(function() {
+            if(saturnSfourRad < Math.PI * 2) {
+                saturnSfourRad += saturnSfourSpd;
+            } else {
+                saturnSfourRad = 0;
+            }
+            var x = parseInt(saturn.style.left) + Math.cos(saturnSfourRad) * saturnSfourDis;
+            var y = parseInt(saturn.style.top) + Math.sin(saturnSfourRad) * saturnSfourDis / 5;
+
+            saturnSfour.style.left = x + 24 + "px";
+            saturnSfour.style.top = y + 11 + "px";
+        }, 10);
+
+        // move saturnSfive
+        setInterval(function() {
+            if(saturnSfiveRad < Math.PI * 2) {
+                saturnSfiveRad += saturnSfiveSpd;
+            } else {
+                saturnSfiveRad = 0;
+            }
+            var x = parseInt(saturn.style.left) + Math.cos(saturnSfiveRad) * saturnSfiveDis;
+            var y = parseInt(saturn.style.top) + Math.sin(saturnSfiveRad) * saturnSfiveDis / 5;
+
+            saturnSfive.style.left = x + 24 + "px";
+            saturnSfive.style.top = y + 11 + "px";
+        }, 10);
+
+        // move uranus
+        setInterval(function() {
+            if(uranusRad < Math.PI * 2) {
+                uranusRad += uranusSpd;
+            } else {
+                uranusRad = 0;
+            }
+            setPosition(uranusRad, uranusDis, uranus, 15);
+        }, 10);
+
+        // move uranusSone
+        setInterval(function() {
+            if(uranusSoneRad < Math.PI * 2) {
+                uranusSoneRad += uranusSoneSpd;
+            } else {
+                uranusSoneRad = 0;
+            }
+            var x = parseInt(uranus.style.left) + Math.cos(uranusSoneRad) * uranusSoneDis;
+            var y = parseInt(uranus.style.top) + Math.sin(uranusSoneRad) * uranusSoneDis / 5;
+
+            uranusSone.style.left = x + 20 + "px";
+            uranusSone.style.top = y + 11 + "px";
+        }, 10);
+
+        // move uranusStwo
+        setInterval(function() {
+            if(uranusStwoRad < Math.PI * 2) {
+                uranusStwoRad += uranusStwoSpd;
+            } else {
+                uranusStwoRad = 0;
+            }
+            var x = parseInt(uranus.style.left) + Math.cos(uranusStwoRad) * uranusStwoDis;
+            var y = parseInt(uranus.style.top) + Math.sin(uranusStwoRad) * uranusStwoDis / 5;
+
+            uranusStwo.style.left = x + 20 + "px";
+            uranusStwo.style.top = y + 11 + "px";
+        }, 10);
+
+        // move uranusSthree
+        setInterval(function() {
+            if(uranusSthreeRad < Math.PI * 2) {
+                uranusSthreeRad += uranusSthreeSpd;
+            } else {
+                uranusSthreeRad = 0;
+            }
+            var x = parseInt(uranus.style.left) + Math.cos(uranusSthreeRad) * uranusSthreeDis;
+            var y = parseInt(uranus.style.top) + Math.sin(uranusSthreeRad) * uranusSthreeDis / 5;
+
+            uranusSthree.style.left = x + 20 + "px";
+            uranusSthree.style.top = y + 11 + "px";
+        }, 10);
+
+        // move uranusSfour
+        setInterval(function() {
+            if(uranusSfourRad < Math.PI * 2) {
+                uranusSfourRad += uranusSfourSpd;
+            } else {
+                uranusSfourRad = 0;
+            }
+            var x = parseInt(uranus.style.left) + Math.cos(uranusSfourRad) * uranusSfourDis;
+            var y = parseInt(uranus.style.top) + Math.sin(uranusSfourRad) * uranusSfourDis / 5;
+
+            uranusSfour.style.left = x + 20 + "px";
+            uranusSfour.style.top = y + 11 + "px";
+        }, 10);
+
+        // move neptune
+        setInterval(function() {
+            if(neptuneRad < Math.PI * 2) {
+                neptuneRad += neptuneSpd;
+            } else {
+                neptuneRad = 0;
+            }
+            setPosition(neptuneRad, neptuneDis, neptune, 15);
+        }, 10);
+
+        // move neptuneSone
+        setInterval(function() {
+            if(neptuneSoneRad < Math.PI * 2) {
+                neptuneSoneRad += neptuneSoneSpd;
+            } else {
+                neptuneSoneRad = 0;
+            }
+            var x = parseInt(neptune.style.left) + Math.cos(neptuneSoneRad) * neptuneSoneDis;
+            var y = parseInt(neptune.style.top) + Math.sin(neptuneSoneRad) * neptuneSoneDis / 5;
+
+            neptuneSone.style.left = x + 8 + "px";
+            neptuneSone.style.top = y + 9 + "px";
+        }, 10);
+
+        function setPosition(rad, dis, pla, pos) {
+            var x = parseInt(sun.style.left) + 50 + Math.cos(rad) * dis;
+            var y = parseInt(sun.style.top) + 50 + Math.sin(rad) * dis / 5;
+
+            pla.style.left = x - pos + "px";
+            pla.style.top = y - pos + "px";
+        }
+
+        // set mainContent
+        var box = document.querySelector(".border");
+        var content = document.querySelector(".container");
+        box.style.marginTop = window.innerHeight - 920 + "px";
+
+        setTimeout(function() {
+            content.style.display = "block";
+        }, 50);
+    }
+</script>
+
+</html>

@@ -1,0 +1,438 @@
+body {
+    min-width: 850px;
+    padding: 20px;
+    background: #282828;
+    font-family: 'Yesteryear', cursive;
+}
+
+.border {
+    margin: 0 auto;
+    width: 1200px;
+    border: 1px solid #FFF;
+    border-top: none;
+    padding: 20px;
+    margin-top: 20px;
+}
+
+.titleBox {
+    position: relative;
+}
+
+.leftLine {
+    width: 540px;
+    height: 10px;
+    position: absolute;
+    border-top: 1px solid #FFF;
+    top: -20px;
+    left: -20px;
+}
+
+.rightLine {
+    width: 550px;
+    height: 10px;
+    position: absolute;
+    border-top: 1px solid #FFF;
+    top: -20px;
+    right: -20px;
+}
+
+.title {
+    color: #FFF;
+    width: 150px;
+    text-align: center;
+    position: absolute;
+    top: -55px;
+    left: 525px;
+    font-size: 50px;
+    z-index: 1200;
+    line-height: 40px;
+    text-shadow: 1px 1px 20px yellow;
+}
+
+.container {
+    width: 1200px;
+    height: 800px;
+    background: url("images/milkyway.jpg");
+    background-size: cover;
+    background-repeat: none;
+    position: relative;
+    margin: 0 auto;
+    display: none;
+}
+
+.menuBox {
+    position: relative;
+}
+/*--------------SUN--------------*/
+#sun {
+    position: absolute;
+    top: 100px;
+    left: 100px;
+    height: 100px;
+    width: 100px;
+}
+
+.semiWrapper {
+    position: relative;
+}
+
+#upperSemi {
+    background: url("images/sun.png");
+    background-size: 120px;
+    background-position-x: -10px;
+    background-position-y: -11px;
+    position: absolute;
+    top: 0px;
+    height: 50px;
+    width: 100px;
+    border-radius: 50px 50px 0px 0px;
+    z-index: 1000;
+    box-shadow: 1px 1px 100px orange;
+}
+
+#lowerSemi {
+    background: url("images/sun.png");
+    background-size: 120px;
+    background-position-x: -10px;
+    background-position-y: -60px;
+    position: absolute;
+    bottom: -100px;
+    height: 50px;
+    width: 100px;
+    border-radius: 0px 0px 50px 50px;
+    box-shadow: 1px 1px 120px orange;
+}
+
+.planets div {
+    position: absolute;
+    border-radius: 50%;
+}
+
+/*--------------MERCURY--------------*/
+#mercury {
+    height: 5px;
+    width: 5px;
+    background: url("images/mercury.png");
+    background-size: cover;
+}
+
+/*--------------VENUS--------------*/
+#venus {
+    height: 8px;
+    width: 8px;
+    background: url("images/venus.png");
+    background-size: cover;
+}
+
+/*--------------EARTH--------------*/
+#earth .earthWrapper{
+    position: relative;
+}
+
+#earth #earthUpper {
+    background: url("images/earth.png");
+    background-size: 16px;
+    width: 14px;
+    height: 7px;
+    border-radius: 14px 14px 0 0;
+    top: 0px;
+    z-index: 999;
+}
+
+#earth #earthLower {
+    background: url("images/earth.png");
+    background-size: 16px;
+    background-position-y: -24px;
+    width: 14px;
+    height: 7px;
+    border-radius: 0px 0px 14px 14px;
+    bottom: -14px;
+}
+
+#moon {
+    height: 2px;
+    width: 2px;
+    background: #FFF;
+    z-index: 998;
+}
+
+/*--------------MARS--------------*/
+#mars .marsWrapper {
+    position: relative;
+}
+
+#mars #marsUpper {
+    background: url("images/mars.png");
+    background-size: 16px;
+    height: 6px;
+    width: 12px;
+    border-radius: 12px 12px 0px 0px;
+    top: 0px;
+    z-index: 997;
+}
+
+#mars #marsLower {
+    background: url("images/mars.png");
+    background-size: 16px;
+    background-position-y: -21px;
+    height: 6px;
+    width: 12px;
+    border-radius: 0px 0px 12px 12px;
+    bottom: -12px;
+}
+
+#marsSone {
+    height: 2px;
+    width: 2px;
+    background: #FFF;
+}
+
+#marsStwo {
+    height: 1px;
+    width: 1px;
+    background: #FFF;
+}
+
+/*--------------JUPITER--------------*/
+#jupiter #jupiterWrapper {
+    position: relative;
+}
+
+#jupiter #jupiterUpper {
+    background: url("images/jupiter.png");
+    background-size: 32px;
+    background-position-x: -1px;
+    height: 15px;
+    width: 30px;
+    border-radius: 30px 30px 0px 0px;
+    top: 0px;
+    z-index: 986;
+}
+
+#jupiter #jupiterLower {
+    background: url("images/jupiter.png");
+    background-size: 32px;
+    background-position-y: -15px;
+    background-position-x: -1px;
+    height: 15px;
+    width: 30px;
+    border-radius: 0px 0px 30px 30px;
+    bottom: -30px;
+}
+
+#jupiterSone {
+    height: 5px;
+    width: 5px;
+    background: wheat;
+}
+
+#jupiterStwo {
+    height: 4px;
+    width: 4px;
+    background: #CCC;
+}
+
+#jupiterSthree {
+    height: 7px;
+    width: 7px;
+    background: #777;
+}
+
+#jupiterSfour {
+    height: 6px;
+    width: 6px;
+    background: indigo;
+}
+
+#jupiterSfake {
+    height: 1px;
+    width: 1px;
+    background: #FFF;
+}
+
+/*--------------SATURN--------------*/
+#satrun .saturnWrapper {
+    position: relative;
+}
+
+#saturn #saturnUpper {
+    height: 11px;
+    width: 22px;
+    background: url("images/saturn.png");
+    background-size: 25px;
+    background-position-x: -2px;
+    border-radius: 22px 22px 0px 0px;
+    top: 0px;
+    left: 14px;
+    z-index: 984;
+}
+
+#saturn #saturnRim {
+    height: 9px;
+    width: 38px;
+    left: 5px;
+    top: 5px;
+    background: rgba(100,100,100,0.2);
+    border: 1px solid rgba(0,0,0,0.2);
+}
+
+#saturn #saturnRimOuter {
+    height: 14px;
+    width: 50px;
+    background: rgba(200,200,200,0.5);
+    top: 5px;
+}
+
+#saturn #saturnLower {
+    height: 11px;
+    width: 22px;
+    background: url("images/saturn.png");
+    background-size: 25px;
+    background-position-y: -13px;
+    background-position-x: -2px;
+    bottom: -22px;
+    border-radius: 0px 0px 22px 22px;
+    left: 14px;
+}
+
+#saturn #saturnUpperCap {
+    height: 5px;
+    width: 21px;
+    background: url("images/saturn.png");
+    background-size: 25px;
+    background-position-x: -2px;
+    background-position-y: -10px;
+    top: 8px;
+    left: 14px;
+}
+
+#saturnSone {
+    height: 6px;
+    width: 6px;
+    background: #FFF;
+}
+
+#saturnStwo {
+    height: 5px;
+    width: 5px;
+    background: #777;
+}
+
+#saturnSthree {
+    height: 2px;
+    width: 2px;
+    background: orangered;
+}
+
+#saturnSfour {
+    height: 4px;
+    width: 4px;
+    background: lightsteelblue;
+}
+
+#saturnSfive {
+    height: 3px;
+    width: 3px;
+    background: pink;
+}
+
+iframe {
+    position: absolute;
+    bottom: 0px;
+}
+
+/*--------------URANUS--------------*/
+#uranusWrapper {
+    position: relative;
+}
+
+#uranus #uranusUpper {
+    width: 20px;
+    height: 10px;
+    background: url("images/uranus.png");
+    background-size: 26px;
+    background-position-x: -3px;
+    background-position-y: -2px;
+    border-radius: 20px 20px 0px 0px;
+    top: 0px;
+    left: 10px;
+    z-index: 983;
+}
+
+#uranus #uranusLower {
+    width: 20px;
+    height: 10px;
+    background: url("images/uranus.png");
+    background-size: 26px;
+    background-position-y: -12px;
+    background-position-x: -3px;
+    border-radius: 0px 0px 20px 20px;
+    bottom: -20px;
+    left: 10px;
+}
+
+#uranus #uranusRim {
+    width: 40px;
+    height: 10px;
+    top: 5px;
+    border: 1px dotted #FFF;
+    background: none;
+    left: -1px;
+}
+
+#uranusSone {
+    width: 2px;
+    height: 2px;
+    background: #CCC;
+}
+
+#uranusStwo {
+    width: 4px;
+    height: 4px;
+    background: #777;
+}
+
+#uranusSthree {
+    width: 1px;
+    height: 1px;
+    background: #FFF;
+}
+
+#uranusSfour {
+    width: 3px;
+    height: 3px;
+    background: #EEE;
+}
+
+/*--------------NEPTUNE--------------*/
+#neptuneWrapper {
+    position: relative;
+}
+
+#neptune #neptuneUpper {
+    width: 18px;
+    height: 9px;
+    background: url("images/neptune.png");
+    background-size: 20px;
+    background-position-x: -1px;
+    border-radius: 18px 18px 0px 0px;
+    top: 0px;
+    z-index: 982;
+}
+
+#neptune #neptuneLower {
+    width: 18px;
+    height: 9px;
+    background: url("images/neptune.png");
+    background-size: 20px;
+    background-position-y: -8px;
+    background-position-x: -1px;
+    border-radius: 0px 0px 18px 18px;
+    bottom: -18px;
+}
+
+#neptuneSone {
+    width: 2px;
+    height: 2px;
+    background: #DDD;
+}
