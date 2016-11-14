@@ -53,7 +53,7 @@ window.onload = function() {
 
                             // top border start
                             var topInter = setInterval(function() {
-                                topPlus += Math.min(-1, 1 - $(".topBorder").offset().left / 100);
+                                topPlus += Math.min(-1, 1 - $(".topBorder").offset().left / 80);
                                 $(".topBorder").css({"left" : topPlus + "px"});
 
                                 if(topPlus <= 0) {

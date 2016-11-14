@@ -1,11 +1,16 @@
 html {
     padding: 0px;
+    font-family: 'Old Standard TT', serif;
 }
 
 body {
     padding: 0px;
     margin: 0px;
     box-sizing: border-box;
+}
+
+h1, h2 {
+    font-weight: 100;
 }
 
 header {
@@ -24,18 +29,32 @@ header {
 }
 
 .logo {
-    width: 150px;
-    height: 150px;
+    width: 100px;
+    height: 100px;
     position: absolute;
-    top: 0px;
-    left: 0px;
+    top: 30px;
+    left: 30px;
     z-index: 100;
     background: #1d2e44;
+    border-bottom: 1px solid #FFF;
+    border-right: 1px solid #FFF;
 }
 
 .logo img {
-    height: 100%;
-    transform: rotate(315deg);
+    height: 80%;
+    width: 90%;
+}
+
+.menuBtn {
+    width: 100px;
+    height: 100px;
+    position: absolute;
+    bottom: 30px;
+    right: 30px;
+    z-index: 100;
+    background: #1d2e44;
+    border-top: 1px solid #FFF;
+    border-left: 1px solid #FFF;
 }
 
 .titleBox {
@@ -70,7 +89,7 @@ header {
     top: 75%;
     transform: translate(-50%, -50%);
     color: #FFF;
-    font-size: 25px;
+    font-size: 15px;
     text-align: center;
 }
 
@@ -79,12 +98,17 @@ header {
         font-size: 30px;
     }
     .subTitle {
-        font-size: 15px;
+        font-size: 10px;
     }
 
     .logo {
-        width: 100px;
-        height: 100px;
+        width: 80px;
+        height: 80px;
+    }
+
+    .menuBtn {
+        width: 80px;
+        height: 80px;
     }
 }
 
@@ -94,8 +118,13 @@ header {
     }
 
     .logo {
-        width: 80px;
-        height: 80px;
+        width: 50px;
+        height: 50px;
+    }
+
+    .menuBtn {
+        width: 50px;
+        height: 50px;
     }
 }
 
@@ -103,8 +132,7 @@ header {
     position: absolute;
     top: 50%;
     left: 50%;
-    margin-left: -75px;
-    margin-top: 100px;
+    transform: translate(-50%, 200%);
     border: 1px solid #FFF;
     padding: 10px 30px;
     font-size: 20px;
