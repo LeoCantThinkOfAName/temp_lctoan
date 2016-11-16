@@ -72,34 +72,26 @@ section {
 }
 
 .menuBox .menuBtn {
-    border: none;
-    background: none;
-    line-height: 0px;
-    padding: 0px;
+    line-height: 50px;
     color: rgba(255,255,255,0.5);
     font-size: 50px;
     position: absolute;
-    top: 55px;
+    top: 30px;
     left: 40px;
     cursor: pointer;
-    transform: rotate(0deg);
     outline: none;
     transition: 1s;
+    z-index: 100;
+}
+
+.menuBox input {
+    display: none;
 }
 
 .menuBox .menuBtn:hover {
     color: rgba(255,255,255,1);
     transition: 1s;
 }
-
-/*.menuBox .menuBoxLeft {
-    height: 0px;
-    width: 1px;
-    border-left: 1px solid #FFF;
-    position: absolute;
-    right: 99px;
-    bottom: 0px;
-}*/
 
 .menuBox .menuBoxTop {
     height: 1px;
@@ -214,10 +206,14 @@ nav {
     width: 0px;
     height: 0px;
     border: 1px solid #FFF;
+    border-right: none;
     border-bottom: 1px solid #1d2e44;
     float: right;
-    margin-right: 159px;
-    margin-bottom: 0px;
+    margin-right: 130px;
+    margin-bottom: -30px;
+    display: none;
+    transition: 1.5s;
+    line-height: 100px;
 }
 
 ul {
@@ -226,20 +222,31 @@ ul {
 }
 
 ul li {
-    display: inline-block;
     width: 33.3333%;
     font-size: 20px;
     text-align: center;
-    line-height: 50px;
+    display: inline-block;
 }
 
 ul li a {
     text-decoration: none;
     color: rgba(255,255,255,0.0);
+    transition: color 1s ease;
 }
 
 ul li a:hover {
     color: rgba(255,255,255,1);
+}
+
+.menuBox input:checked ~ nav .menu{
+    width: 300px;
+}
+
+.menuBox input:checked ~ nav .menu a {
+    color: rgba(255,255,255,0.5);
+    transition: color 1s ease;
+    transition-delay: 0.5s;
+    -webkit-transition-delay: 0.5s;
 }
 
 @media screen and (max-width: 500px) {
@@ -275,22 +282,28 @@ ul li a:hover {
         right: 10px;
     }
 
-    /*.menuBox .menuBoxLeft {
-        right: 79px;
-    }*/
+    .menuBox .menu {
+        margin-bottom: -30px;
+        margin-right: 110px;
+    }
 
     .menuBox .menuBoxTop {
         top: 0px;
     }
 
     .menuBox .menuBtn {
-        top: 45px;
+        top: 25px;
         left: 30px;
     }
 
     .menu {
         margin-right: 119px;
         margin-bottom: -20px;
+        line-height: 80px;
+    }
+
+    .menuBox input:checked ~ nav .menu {
+        width: 250px;
     }
 }
 
@@ -321,16 +334,26 @@ ul li a:hover {
         height: 50px;
     }
 
-    /*.menuBox .menuBoxLeft {
-        right: 49px;
-    }*/
+    .menuBox .menu {
+        margin-bottom: -30px;
+        margin-right: 80px;
+    }
 
     .menuBox .menuBtn {
-        top: 30px;
+        top: 5px;
         left: 15px;
     }
 
     .menu {
         margin-right: 89px;
+        line-height: 50px;
+    }
+
+    .menuBox input:checked ~ nav .menu {
+        width: 200px;
+    }
+
+    ul li {
+        font-size: 15px;
     }
 }

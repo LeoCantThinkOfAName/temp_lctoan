@@ -95,6 +95,7 @@
                                     menuPlus += 2;
                                     $(".menuBoxTop").css({"width" : menuPlus + "px"});
                                     $(".menu").css({"height" : menuPlus - 2 + "px"});
+                                    $(".menu").css({"display" : "block"});
 
                                     if(menuPlus >= boxesLength(winWidth)) {
                                         clearInterval(menuBoxInter);
@@ -129,48 +130,52 @@
         }, 1);
 
         // menu button event
-        var menuWidth = 0;
-        var menuSwitcher = true;
+        // var menuWidth = 0;
+        // var menuSwitcher = true;
 
-        function menuControl(num, wid) {
-            var menuInter = setInterval(function() {
-                    menuWidth += num;
-                    $(".menu").css({"border-left" : "1px solid #FFF"});
-                    $(".menu").css({"width" : menuWidth + "px"});
-                    if(wid != 0) {
-                        if(menuWidth >= wid) {
-                            if(winWidth <= 500) {
-                                $(".menu").css({"border-left" : "1px solid #1d2e44"});
-                            }
-                            clearInterval(menuInter);
-                            menuSwitcher = false;
-                        }
-                    } else {
-                        if(menuWidth == 0) {
-                            clearInterval(menuInter);
-                            menuSwitcher = true;
-                        }
-                    }
-                }, 1);
-        }
+        // function menuControl(num, wid) {
+        //     var menuInter = setInterval(function() {
+        //             menuWidth += num;
+        //             $(".menu").css({"border-left" : "1px solid #FFF"});
+        //             $(".menu").css({"width" : menuWidth + "px"});
+        //             if(wid != 0) {
+        //                 if(menuWidth >= wid) {
+        //                     if(winWidth <= 500) {
+        //                         $(".menu").css({"border-left" : "1px solid #1d2e44"});
+        //                     }
+        //                     clearInterval(menuInter);
+        //                     menuSwitcher = false;
+        //                 }
+        //             } else {
+        //                 if(menuWidth == 0) {
+        //                     clearInterval(menuInter);
+        //                     menuSwitcher = true;
+        //                 }
+        //             }
+        //         }, 1);
+        // }
 
-        $(".menuBtn").on("click", function() {
-            if(borderAnimationEnd) {
-                if(winWidth > 500) {
-                    if(menuSwitcher) {
-                        menuControl(2, 300);
-                    } else {
-                        menuControl(-2, 0);
-                    }
-                } else {
-                   if(menuSwitcher) {
-                        menuControl(2, (winWidth - 102));
-                    } else {
-                        menuControl(-2, 0);
-                    } 
-                }
-            }
-        });
+        // $(".menuBtn").on("click", function() {
+        //     if(borderAnimationEnd) {
+        //         if(winWidth > 500) {
+        //             if(menuSwitcher) {
+        //                 menuControl(2, 300);
+        //             } else {
+        //                 menuControl(-2, 0);
+        //             }
+        //         } else {
+        //            if(menuSwitcher) {
+        //                if(winWidth <= 500 && winWidth >= 351) {
+        //                    menuControl(2, (winWidth - 102));
+        //                } else if(winWidth <= 350) {
+        //                    menuControl(2, winWidth - 72);
+        //                }
+        //             } else {
+        //                 menuControl(-2, 0);
+        //             } 
+        //         }
+        //     }
+        // });
 
     }
 
