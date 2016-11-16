@@ -233,16 +233,12 @@ ul li a {
     transition: color 1s ease;
 }
 
-ul li a:hover {
-    color: rgba(255,255,255,1);
-}
-
 .menuBox input:checked ~ nav .menu{
     width: 300px;
 }
 
 .menuBox input:checked ~ nav .menu a {
-    color: rgba(255,255,255,0.5);
+    color: rgba(255,255,255,1);
     transition: color 1s ease;
     transition-delay: 0.5s;
     -webkit-transition-delay: 0.5s;
