@@ -115,6 +115,7 @@
 
                                                     if(topPlus <= 0) {
                                                         clearInterval(topInter);
+                                                        $(".menu").css({"transition" : "1.5s"});
                                                         borderAnimationEnd = true;
                                                     }
                                                 });
