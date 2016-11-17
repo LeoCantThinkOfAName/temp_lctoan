@@ -1,11 +1,13 @@
 (function() {
     "use strict";
+    var browser = navigator.userAgent.match("Chrome" || "Safari" || "Edge" || "Firefox");
 
     var winHeight = document.documentElement.clientHeight;
     var winWidth = document.documentElement.clientWidth;
 
     window.onresize = function() {
         var moWinWdith = document.documentElement.clientWidth;
+        $(".menu").css({"transition" : "0s"});
         if(moWinWdith < 350) {
             $(".logoBoxRight").css({"height" : "50px"});
             $(".logoBoxBottom").css({"width" : "50px"});
@@ -32,13 +34,13 @@
         var titleDrop = 0
         var titleOpacity = 0
         var titleBoxDropDown = setInterval(function() {
-            titleDrop += Math.min(1, 0.5 - Math.abs($(".titleBox").offset().top) / 550);
+            titleDrop += Math.min(1, 0.5 - Math.abs($(".titleBox").offset().top) / 450);
             $(".titleBox").css({"top" : titleDrop + "%"});
 
             titleOpacity += 0.01;
             $(".titleBox").css({"opacity" : titleOpacity});
 
-            if(titleDrop >= 35) {
+            if(titleDrop >= 20) {
                 clearInterval(titleBoxDropDown);
             }
         }, 10);
@@ -65,6 +67,11 @@
             } else {
                 return 100;
             }
+        }
+
+        // Disable css clip if using older version browser
+        if(!browser) {
+            $(".clip-text").css({"background-image" : "url()"});
         }
 
         // border shows
@@ -130,53 +137,28 @@
             }
         }, 1);
 
-        // menu button event
-        // var menuWidth = 0;
-        // var menuSwitcher = true;
+        // menuBtn click event
+        $(".menuBtn").on("click", function() {
+            $(".menu").css({"transition" : "1.5s"});
+        });
 
-        // function menuControl(num, wid) {
-        //     var menuInter = setInterval(function() {
-        //             menuWidth += num;
-        //             $(".menu").css({"border-left" : "1px solid #FFF"});
-        //             $(".menu").css({"width" : menuWidth + "px"});
-        //             if(wid != 0) {
-        //                 if(menuWidth >= wid) {
-        //                     if(winWidth <= 500) {
-        //                         $(".menu").css({"border-left" : "1px solid #1d2e44"});
-        //                     }
-        //                     clearInterval(menuInter);
-        //                     menuSwitcher = false;
-        //                 }
-        //             } else {
-        //                 if(menuWidth == 0) {
-        //                     clearInterval(menuInter);
-        //                     menuSwitcher = true;
-        //                 }
-        //             }
-        //         }, 1);
-        // }
+        // navigation
+        var currentPos = 0;
 
-        // $(".menuBtn").on("click", function() {
-        //     if(borderAnimationEnd) {
-        //         if(winWidth > 500) {
-        //             if(menuSwitcher) {
-        //                 menuControl(2, 300);
-        //             } else {
-        //                 menuControl(-2, 0);
-        //             }
-        //         } else {
-        //            if(menuSwitcher) {
-        //                if(winWidth <= 500 && winWidth >= 351) {
-        //                    menuControl(2, (winWidth - 102));
-        //                } else if(winWidth <= 350) {
-        //                    menuControl(2, winWidth - 72);
-        //                }
-        //             } else {
-        //                 menuControl(-2, 0);
-        //             } 
-        //         }
-        //     }
-        // });
+        function enter(num, pos) {
+            var inter = setInterval(function() {
+                var desi = $(pos).offset().left;
+                currentPos -= num * (desi / 200);
+                $(".scroll-container").css({"left" : currentPos + "vw"});
+                if(currentPos >= pos) {
+                    clearInterval(inter);
+                } 
+            }, 10);
+        }
+
+        $(".headerBtn").on("click", function() {
+            enter(1, ".about");
+        });
 
     }
 
