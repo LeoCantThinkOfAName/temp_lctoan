@@ -143,21 +143,58 @@
         });
 
         // navigation
-        var currentPos = 0;
+        var incre = 0;
 
-        function enter(num, pos) {
-            var inter = setInterval(function() {
-                var desi = $(pos).offset().left;
-                currentPos -= num * (desi / 200);
-                $(".scroll-container").css({"left" : currentPos + "vw"});
-                if(currentPos >= pos) {
-                    clearInterval(inter);
-                } 
-            }, 10);
+        function enter(pos) {
+            var x = document.querySelector(pos).offsetLeft * -1;
+            console.log("incre: " + incre);
+            console.log("x:" + x);
+
+            if(incre > x) {
+                console.log("go right");
+                move(-5);
+            } else if(incre < x) {
+                console.log("go left");
+                move(5);
+            } else {
+                return;
+            }
+
+            function move(num) {
+                var inter = setInterval(function() {
+                    incre += num;
+                    $(".scroll-container").css({"left" : incre + "px"});
+                    if(num < 0) {
+                        if(incre <= x) {
+                            console.log("end");
+                            clearInterval(inter);
+                        }
+                    } else {
+                        if(incre >= x) {
+                            console.log("end");
+                            clearInterval(inter);
+                        }
+                    }
+                }, 1);
+            }
+
         }
 
+        var nav = $(".menu ul li a");
         $(".headerBtn").on("click", function() {
-            enter(1, ".about");
+            enter(".about");
+        });
+
+        nav[0].onclick = function() {
+            enter(".about");
+        }
+
+        nav[1].onclick = function() {
+            enter(".works");
+        }
+
+        $(".logo img").on("click", function() {
+            
         });
 
     }

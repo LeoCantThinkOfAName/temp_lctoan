@@ -6,7 +6,7 @@ html {
 
 /* Let's get this party started */
 ::-webkit-scrollbar {
-    width: 10px;
+    width: 0px;
 }
  
 /* Track */
@@ -63,7 +63,7 @@ section {
     z-index: 2;
     height: 100vh;
     width: 100vw;
-    padding: 20px 75px 100px 50px;
+    padding: 20px 100px 100px 50px;
 }
 
 .aboutBox {
@@ -72,7 +72,6 @@ section {
     height: 100%;
     margin: 0 auto;
     padding: 50px;
-    padding-right: 30px;
     padding-bottom: 0px;
     overflow-y: auto;
     overflow-x: hidden;
@@ -87,7 +86,45 @@ section {
     background: #000;
 }
 
+.scroll-container .works {
+    position: absolute;
+    left: 200vw;
+    top: 0;
+    width: 100vw;
+    height: 100vh;
+    z-index: 2;
+}
 
+.worksTitle {
+    margin: 50px 0px 0px 0px;
+    color: #FFF;
+    font-size: 1.5em;
+}
+
+.worksBox {
+    max-width: 800px;
+    min-width: 200px;
+    height: 100%;
+    margin: 0 auto;
+    padding: 50px;
+    padding-bottom: 0px;
+    padding-right: 79px;
+    overflow-y: auto;
+    overflow-x: hidden;
+}
+
+.cards {
+    box-sizing: border-box;
+    width: 30%;
+    padding-bottom: 30%;
+    margin: 1%;
+    border: 1px solid #FFF;
+    float: left;
+}
+
+.lastCard {
+    margin-bottom: 150px;
+}
 
 .logo {
     width: 100px;
@@ -102,6 +139,7 @@ section {
 .logo img {
     height: 80%;
     width: 90%;
+    cursor: pointer;
 }
 
 .logo .logoBoxRight {
@@ -277,6 +315,7 @@ nav {
     margin-bottom: -30px;
     display: none;
     line-height: 100px;
+    background: #1d2e44;
 }
 
 ul {
@@ -374,6 +413,20 @@ ul li a {
     .aboutBox {
         padding: 30px;
     }
+
+    .worksBox {
+        padding: 10px;
+        padding-right: 25px;
+    }
+
+    .worksTitle {
+        margin: 80px 0px 0px 0px;
+    }
+
+    .works .cards {
+        width: 48%;
+        padding-bottom: 48%;
+    }
 }
 
 @media screen and (max-width: 350px) {
@@ -424,5 +477,14 @@ ul li a {
 
     ul li {
         font-size: 15px;
+    }
+
+    .works .cards {
+        width: 100%;
+        padding-bottom: 100%;
+    }
+
+    .worksTitle {
+        margin: 40px 0px 0px 0px;
     }
 }
