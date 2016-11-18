@@ -31,16 +31,16 @@
 
     window.onload = function() {
         // header title animation;
-        var titleDrop = 0
-        var titleOpacity = 0
+        var titleDrop = 0;
+        var titleOpacity = 0;
+        var titleDropStagger = 100;
         var titleBoxDropDown = setInterval(function() {
-            titleDrop += Math.min(1, 0.5 - Math.abs($(".titleBox").offset().top) / 450);
-            $(".titleBox").css({"top" : titleDrop + "%"});
-
+            titleDropStagger *= 0.65;
             titleOpacity += 0.01;
+            titleDrop += Math.max(0.05, (titleDropStagger * 0.1));
+            $(".titleBox").css({"top" : titleDrop + "%"});
             $(".titleBox").css({"opacity" : titleOpacity});
-
-            if(titleDrop >= 20) {
+            if(titleDrop >= 25) {
                 clearInterval(titleBoxDropDown);
             }
         }, 10);
