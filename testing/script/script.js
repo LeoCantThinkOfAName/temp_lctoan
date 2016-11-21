@@ -1,202 +1,159 @@
 (function() {
-    "use strict";
-    var browser = navigator.userAgent.match("Chrome" || "Safari" || "Edge" || "Firefox");
-
-    var winHeight = document.documentElement.clientHeight;
-    var winWidth = document.documentElement.clientWidth;
-
-    window.onresize = function() {
-        var moWinWdith = document.documentElement.clientWidth;
-        $(".menu").css({"transition" : "0s"});
-        if(moWinWdith < 350) {
-            $(".logoBoxRight").css({"height" : "50px"});
-            $(".logoBoxBottom").css({"width" : "50px"});
-
-            $(".menuBoxTop").css({"width" : "50px"});
-            $(".menu").css({"height" : "48px"});
-        } else if(moWinWdith <= 500 && moWinWdith >= 351) {
-            $(".logoBoxRight").css({"height" : "80px"});
-            $(".logoBoxBottom").css({"width" : "80px"});
-
-            $(".menuBoxTop").css({"width" : "80px"});
-            $(".menu").css({"height" : "78px"});
-        } else {
-            $(".logoBoxRight").css({"height" : "100px"});
-            $(".logoBoxBottom").css({"width" : "100px"});
-
-            $(".menuBoxTop").css({"width" : "100px"});
-            $(".menu").css({"height" : "98px"});
-        }
-    }
+    'use strict';
 
     window.onload = function() {
-        // header title animation;
-        var titleDrop = 0;
+        var browser = navigator.userAgent.match("Chrome" || "Safari" || "Edge" || "Firefox");
+
+        var logoRightLength = 0;
+        var logoBottomLength = 100;
+
+        var menuLeftLength = 100;
+        var menuTopLength = 0;
+        
+        var frameLeftLength = 100;
+        var frameBottomLength = 100;
+        var frameRightLength = 100;
+        var frameTopLength = 100;
+
+        var titleTop = 10;
         var titleOpacity = 0;
-        var titleDropStagger = 100;
-        var titleBoxDropDown = setInterval(function() {
-            titleDropStagger *= 0.65;
-            titleOpacity += 0.01;
-            titleDrop += Math.max(0.05, (titleDropStagger * 0.1));
-            $(".titleBox").css({"top" : titleDrop + "%"});
-            $(".titleBox").css({"opacity" : titleOpacity});
-            if(titleDrop >= 25) {
-                clearInterval(titleBoxDropDown);
-            }
-        }, 10);
 
-        var titleBG = 0;
-        var titleInter = setInterval(function() {
-            titleBG += 1;
-            $(".clip-text").css({"background-position-x" : titleBG + "px"});
-        }, 50);
-        // header border animation
-        var borderAnimationEnd = false;
-        var leftPlus = - winHeight;
-        var bottomPlus = - winWidth;
-        var rightPlus = winHeight;
-        var topPlus = winWidth;
-        var logoPlus = 0;
-        var menuPlus = 0;
+        var clipMove = 0;
 
-        var boxesLength = function(w) {
-            if(w < 350) {
-                return 50;
-            } else if(w <= 500 && w >= 351) {
-                return 80;
-            } else {
-                return 100;
-            }
-        }
+        var clientW = document.documentElement.clientWidth;
+        var clientH = document.documentElement.clientHeight;
 
-        // Disable css clip if using older version browser
+        //disable clip if using IE//
         if(!browser) {
-            $(".clip-text").css({"background-image" : "url()"});
+            $(".title h1").css({"background-image" : "url()"});
         }
 
-        // border shows
-        var logoInter = setInterval(function() {
-            logoPlus += 2;
-            $(".logoBoxRight").css({"height" : logoPlus + "px"});
-            $(".logoBoxBottom").css({"width" : logoPlus + "px"});
-            if(logoPlus >= boxesLength(winWidth)) {
-                clearInterval(logoInter);
+        //Clip bg animation//
+        setInterval(function() {
+            clipMove += 0.1;
+            $(".title h1").css("background-position-x", clipMove + "px");
+        },1);
 
-                // left border start
-                var leftInter = setInterval(function() {
-                    leftPlus += Math.max(0, 1 - $(".leftBorder").offset().top / 50);
-                    $(".leftBorder").css({"top" : leftPlus + "px"})
+        //frame animation//
+        var logoRightInter = setInterval(function() {
+            logoRightLength += 2.5;
+            $(".border-right").css("height", logoRightLength + "%");
 
-                    if(leftPlus >= 0) {
-                        clearInterval(leftInter);
+            if(logoRightLength>= 100) {
+                clearInterval(logoRightInter);
+                
+                var logoBottomInter = setInterval(function() {
+                    logoBottomLength -= 2.5;
+                    $(".border-bottom").css("left", logoBottomLength + "%")
 
-                        // bottom border start
-                        var bottonInter = setInterval(function() {
-                            bottomPlus += Math.max(0, 1 - $(".bottomBorder").offset().left / 50);
-                            $(".bottomBorder").css({"left" : bottomPlus + "px"});
+                    if(logoBottomLength <= 0) {
+                        clearInterval(logoBottomInter);
 
-                            if(bottomPlus >= 0) {
-                                clearInterval(bottonInter);
+                        var frameLeftInter = setInterval(function() {
+                            frameLeftLength -= Math.max(0.1, frameLeftLength * 0.03);
+                            $(".frame-left").css("bottom", frameLeftLength + "%");
 
-                                var menuBoxInter = setInterval(function() {
-                                    menuPlus += 2;
-                                    $(".menuBoxTop").css({"width" : menuPlus + "px"});
-                                    $(".menu").css({"height" : menuPlus - 2 + "px"});
-                                    $(".menu").css({"display" : "block"});
+                            if(frameLeftLength <= 0) {
+                                clearInterval(frameLeftInter);
+                        
+                                var frameBottomInter = setInterval(function() {
+                                    frameBottomLength -= Math.max(0.1, frameBottomLength * 0.03);
+                                    $(".frame-bottom").css("right", frameBottomLength + "vw");
 
-                                    if(menuPlus >= boxesLength(winWidth)) {
-                                        clearInterval(menuBoxInter);
+                                    if(frameBottomLength <= 0) {
+                                        clearInterval(frameBottomInter);
+                                
+                                        var menuLeftInter = setInterval(function() {
+                                            menuLeftLength -= 2.5;
+                                            $(".border-left").css("top", menuLeftLength + "%");
+                                            if(menuLeftLength <= 0) {
+                                                clearInterval(menuLeftInter);
+                                        
+                                                var menuTopInter = setInterval(function() {
+                                                    menuTopLength += 2.5;
+                                                    $(".border-top").css("width", menuTopLength + "%");
 
-                                        // right border start
-                                        var rightInter = setInterval(function() {
-                                            rightPlus += Math.min(-1, 1 - $(".rightBorder").offset().top / 40);
-                                            $(".rightBorder").css({"top" : rightPlus + "px"});
+                                                    if(menuTopLength >= 100) {
+                                                        clearInterval(menuTopInter);
+                                                
+                                                        var frameRightInter = setInterval(function() {
+                                                            frameRightLength -= Math.max(0.1, frameRightLength * 0.03);
+                                                            $(".frame-right").css("top", frameRightLength + "vh");
 
-                                            if(rightPlus <= 0) {
-                                                clearInterval(rightInter);
+                                                            if(frameRightLength <= 0) {
+                                                                clearInterval(frameRightInter);
+                                                        
+                                                                var frameTopInter = setInterval(function() {
+                                                                    frameTopLength -= Math.max(0.1, frameTopLength * 0.01);
+                                                                    $(".frame-top").css("left", frameTopLength + "vw");
 
-                                                // top border start
-                                                var topInter = setInterval(function() {
-                                                    topPlus += Math.min(-1, 1 - $(".topBorder").offset().left / 80);
-                                                    $(".topBorder").css({"left" : topPlus + "px"});
+                                                                    if(frameTopLength <= 0) {
+                                                                        clearInterval(frameTopInter);
+                                                                        
+                                                                        var titleInter = setInterval(function() {
+                                                                            titleTop += Math.min(0.5, 1 - (titleTop * 0.02));
 
-                                                    if(topPlus <= 0) {
-                                                        clearInterval(topInter);
-                                                        $(".menu").css({"transition" : "1.5s"});
-                                                        borderAnimationEnd = true;
+                                                                            titleOpacity += 0.008;
+                                                                            
+                                                                            $(".title").css("top", titleTop + "%");
+                                                                            $(".title").css("opacity", titleOpacity);
+
+                                                                            if(titleTop >= 48) {
+                                                                                clearInterval(titleInter);
+                                                                                $(".menu-box label").css("display", "block");
+                                                                            }
+
+                                                                        }, 5);
+                                                                    }
+                                                                }, 5);
+                                                            }
+                                                        }, 5);
                                                     }
-                                                });
+                                                }, 5);
                                             }
-                                        }, 1);
+                                        }, 5);
                                     }
-                                }, 1);
+                                }, 5);
                             }
-                        }, 1);
+                        }, 5);
                     }
-                }, 1);
+                }, 5);
             }
-        }, 1);
+        }, 5);
 
-        // menuBtn click event
-        $(".menuBtn").on("click", function() {
-            $(".menu").css({"transition" : "1.5s"});
-        });
+        //scrollering fn//
+        var x = 0;
+        $("#logo").on("click", function() {enter(0)});
 
-        // navigation
-        var incre = 0;
+        $("#enter").on("click", function() {enter(100)});
 
-        function enter(pos) {
-            var x = document.querySelector(pos).offsetLeft * -1;
-            console.log("incre: " + incre);
-            console.log("x:" + x);
+        $("#about").on("click", function() {enter(100)});
 
-            if(incre > x) {
-                console.log("go right");
-                move(-5);
-            } else if(incre < x) {
-                console.log("go left");
-                move(5);
-            } else {
-                return;
-            }
+        $("#works").on("click", function() {enter(200)});
 
-            function move(num) {
-                var inter = setInterval(function() {
-                    incre += num;
-                    $(".scroll-container").css({"left" : incre + "px"});
-                    if(num < 0) {
-                        if(incre <= x) {
-                            console.log("end");
-                            clearInterval(inter);
-                        }
-                    } else {
-                        if(incre >= x) {
-                            console.log("end");
-                            clearInterval(inter);
-                        }
+        $("#contact").on("click", function() {enter(300)});
+
+        function enter(dis) {
+            var inter = setInterval(function() {
+                if(x < dis) {
+                    x += 2;
+                    $(".scroller").css("left", -x + "vw");
+
+                    if(x >= dis) {
+                        clearInterval(inter);
                     }
-                }, 1);
-            }
+                } else if(x > dis) {
+                    x -= 2;
+                    $(".scroller").css("left", -x + "vw");
 
+                    if(x <= dis) {
+                        clearInterval(inter);
+                    }
+                } else {
+                    return;
+                }
+
+            },1);
         }
-
-        var nav = $(".menu ul li a");
-        $(".headerBtn").on("click", function() {
-            enter(".about");
-        });
-
-        nav[0].onclick = function() {
-            enter(".about");
-        }
-
-        nav[1].onclick = function() {
-            enter(".works");
-        }
-
-        $(".logo img").on("click", function() {
-            
-        });
-
     }
-
 })();
