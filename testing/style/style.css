@@ -116,8 +116,11 @@
 }
 
 .scroller .about h2 img {
-    height: 300px;
-    width: 300px;
+    height: 350px;
+    width: 350px;
+
+    background: rgba(255,255,255,0.5);
+    border-radius: 50%;
 }
 
 .scroller .about article {
@@ -466,6 +469,11 @@
 
     .scroller .works .gallery .cards {
         width: 50%;
+    }
+
+    .scroller .about h2 img {
+        height: 280px;
+        width: 280px;
     }
 
     .scroller .contact form {
