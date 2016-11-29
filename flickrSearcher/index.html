@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>flickr Searcher</title>
+    <link rel="stylesheet" href="bower_components/angular-material/angular-material.css">
+    <style>
+        .container {
+            box-sizing: border-box;
+            width: 100%;
+        }
+
+        a {
+            text-decoration: none;
+            color: rgb(63,81,181);
+        }
+
+        .app-content {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        md-button {
+            margin: 0 auto;
+        }
+
+        footer {
+            background: #FF4444;
+        }
+
+        @media screen and (max-width: 800px) {
+            .app-content {
+                width: 95%;
+            }
+        }
+        
+    </style>
+</head>
+<body ng-app="flickrSearcher" ng-controller="ListController" layout-fill layout="column">
+    <md-toolbar>
+        <div class="md-toolbar-tools" data-ng-scroll-down="">
+            <span>flickr Searcher</span>
+        </div>
+        <md-progress-linear md-mode="indeterminate" ng-show="isSearching"></md-progress-linear>
+    </md-toolbar>
+    
+    <div id="tweeting"></div>
+
+    <md-content class="container" layout-fill flex>
+        <div class="app-content" ng-cloak="">
+            <form ng-submit="search()">
+                <md-input-container style="display: block;">
+                    <label>Search For...</label>
+                    <input ng-model="searchTerm" type="text" autocomplete="off">
+                </md-input-container>
+            </form>
+
+            <md-card ng-repeat="pic in results | limitTo: limit">
+                <md-card-header>
+                    <md-card-avatar>
+                        <div ng-if="pic.owner.iconserver > 0">
+                            <img class="md-user-avatar" ng-src="http://farm{{ pic.owner.iconfarm }}.staticflickr.com/{{ pic.owner.iconserver }}/buddyicons/{{ pic.owner.id }}.jpg"/>
+                        </div>
+                        <div ng-if="pic.owner.iconserver == 0">
+                            <img ng-src="https://www.flickr.com/images/buddyicon.gif
+" class="md-user-avatar">
+                        </div>
+                    </md-card-avatar>
+                    <md-card-header-text>
+                        <span class="md-title"><a href="{{ pic.owner.profileurl._content }}">{{ pic.owner.username._content }}</a></span>
+                        <span class="md-subhead">{{ pic.owner.photos.count._content }} Photos</span>
+                    </md-card-header-text>
+                </md-card-header>
+                    <img ng-src="https://farm{{ pic.farm }}.staticflickr.com/{{ pic.server }}/{{ pic.id }}_{{ pic.secret }}_b.jpg" class="md-card-image" alt="pic">
+                <md-card-title>
+                    <md-card-title-text>
+                        <span class="md-he adline">{{ pic.title }}</span>
+                    </md-card-title-text>
+                </md-card-title>
+            </md-card>
+            <div layout="row">
+                <md-button class="md-raised md-primary" ng-if="searched" flex="100" ng-click="loadMore()">Load More!</md-button>
+            </div>
+        </div>
+    </md-content>
+    <footer>
+        <div layout="column" layout-align="center center">
+            <h4>Angular Material Design / flickr API<br>&nbsp;&nbsp;&nbsp;&copy; 2016 LeoCantThinkofAName</h4>
+        </div>
+    </footer>
+
+    <script src="bower_components/angular/angular.min.js"></script>
+    <script src="bower_components/angular-material/angular-material.min.js"></script>
+    <script src="bower_components/angular-aria/angular-aria.min.js"></script>
+    <script src="bower_components/angular-animate/angular-animate.min.js"></script>
+    <script src="bower_components/hammerjs/hammer.min.js"></script>
+    <script src="app.js"></script>
+</body>
+</html>
