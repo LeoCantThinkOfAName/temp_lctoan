@@ -14,7 +14,7 @@
             if(count >= 4) {
                 count = 0;
             }
-        }, 200);
+        }, 150);
     }
 
     function contentControl() {
