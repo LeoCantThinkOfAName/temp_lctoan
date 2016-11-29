@@ -1,0 +1,326 @@
+body {
+    overflow-x: hidden;
+}
+
+a {
+    text-decoration: none;
+    color: #555;
+
+    font-weight: bold;
+}
+
+a:hover {
+    color: #FFF;
+}
+
+.container {
+    max-width: 1200px;
+}
+
+header .container {
+    box-sizing: border-box;
+}
+
+header .container .menu {
+    height: 50px;
+    background: red;
+    margin-top: 30px;
+    line-height: 50px;
+
+    position: relative;
+    z-index: 100;
+}
+
+header .container .menu .logo {
+
+}
+
+header .container .menu nav {
+
+}
+
+header .container .menu nav ul {
+
+}
+
+header .container .menu nav .btn {
+    display: none;
+}
+
+header .container .menu nav ul li {
+    display: inline-block;
+
+    font-size: 15px;
+    margin: 0px 1px;
+}
+
+section .bg {
+    height: 500px;
+    width: 100%;
+
+    position: absolute;
+    top: 0px;
+
+    background: #CCC;
+    background-image: url("../images/bg.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-origin: content-box;
+    background-blend-mode: luminosity;
+}
+
+section .bg .container {
+    height: 100%;
+    position: relative;
+}
+
+section .bg .container .placeholder {
+    height: 1px;
+
+    transition: 1s;
+}
+
+section .bg .container .calendar {
+    background: rgba(255,255,255,0.5);
+
+    height: 380px;
+    margin-top: 100px;
+}
+
+section .bg .container .ad {
+    background: #FFF;
+
+    position: relative;
+    height: 380px;
+    margin-top: 100px;
+}
+
+section .bg .container .ad img {
+    width: 100%;
+    height: 100%;
+}
+
+section .bg .container .ad span {
+    position: absolute;
+    right: 5px;
+    top: 0px;
+    cursor: pointer;
+}
+
+.calendar .controls {
+    background: red;
+    text-align: center;
+    font-size: 20px;
+}
+
+.calendar .controls .clndr-next-button, .clndr-previous-button {
+    cursor: pointer;
+}
+
+.calendar .controls .clndr-next-button:hover, .clndr-previous-button:hover {
+    color: #FFF;
+}
+
+.calendar .days-container .days .headers div {
+    background: #ff7676;
+    display: inline-block;
+    text-align: center;
+
+    width: 14.28%;
+}
+
+.calendar .days-container .days .day {
+    display: inline-block;
+    text-align: center;
+    width: 14.28%;
+
+    line-height: 50px;
+
+    border-bottom: 1px solid #000;
+}
+
+.calendar .days-container .days .adjacent-month {
+    color: #777;
+}
+
+.calendar .days-container .days .event {
+    background: rgba(255,255,255,0.3);
+    cursor: pointer;
+}
+
+.calendar .days-container .days .event:hover {
+    background: rgba(255,255,255,0.5);
+}
+
+section .latest  {
+    margin-top: 390px;
+    background: #333;
+    padding: 20px 0px;
+}
+
+section .latest h3 {
+    color: #ccc;
+}
+
+section .latest .container .row {
+    height: 400px;
+    margin-bottom: 10px;
+}
+
+section .latest .container .row div h5 {
+    margin: 0px;
+}
+
+section .latest .container .row div p {
+    margin: 0px;
+}
+
+section .latest .container .row hr {
+    margin: 0px;
+}
+
+section .latest .container .row div {
+    height: 95%;
+    background: #FFF;
+}
+
+section .latest .container .row .six img {
+    width: 50%;
+    height: 100%;
+    float: left;
+}
+
+section .latest .container .row .six article {
+    float: left;
+    width: 50%;
+    
+    box-sizing: border-box;
+    padding: 5px;
+}
+
+section .latest .container .row div img {
+    width: 100%;
+    margin-bottom: -10px;
+}
+
+section .latest .container .row div article {
+    padding: 5px;
+}
+
+@media screen and (max-width: 1015px) {
+    .container {
+        width: 99%;
+    }
+}
+
+@media screen and (max-width: 850px) {
+    .logo {
+        position: absolute;
+        left: 50%;
+        transform: translateX(-50%);
+    }
+
+    header .container .menu .two {
+        width: 50%;
+        text-align: center;
+    }
+
+    header .container .menu .nine {
+        width: 25%;
+        float: left;
+
+        margin-left: 0px;
+
+        text-align: left;
+    }
+
+    header .container .menu .one {
+        width: 25%;
+
+        position: absolute;
+        right: 0px;
+
+        text-align: right;
+    }
+
+    header .container .menu nav .btn {
+        display: block;
+    }
+
+    header .container .menu nav ul {
+        position: absolute;
+        left: -1px;
+        display: none;
+    }
+
+    header .container .menu nav ul li {
+        display: block;
+        background: red;
+
+        border-top: 1px solid #000;
+        text-align: center;
+        padding: 0px 10px;
+    }
+
+    header .container .menu nav ul .slash {
+        display: none;
+    }
+
+    section .latest {
+        margin-top: 420px;
+    }
+}
+
+@media screen and (max-width: 550px) {
+    section .bg .container {
+        position: relative;
+    }
+
+    section .bg .container .placeholder {
+        display: none;
+    }
+
+    section .bg .container .four {
+        width: 100%;
+        position: absolute;
+        right: 0px;
+
+        transition: 0.5s;
+    }
+
+    section .bg .container .four .one{
+        width: 8.333%;
+    }
+
+    section .bg .container .four .ten {
+        width: 83.333%;
+    }
+
+    section .bg .container .two {
+        width: 20%;
+        margin-left: 0px;
+        position: absolute;
+        right: 0px;
+    }
+
+    section .latest .container .columns {
+        margin-bottom: 10px;
+    }    
+
+    section .latest .container .row {
+        height: 200px;
+    }
+
+    section .latest .container .row .three img {
+        width: 50%;
+        height: 100%;
+        float: left;
+    }
+
+    section .latest .container .row .three article {
+        width: 50%;
+        float: left;
+
+        box-sizing: border-box;
+    }
+}

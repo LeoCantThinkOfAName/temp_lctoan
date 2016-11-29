@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <title>Kinda Boring Layout</title>
+    <link rel="stylesheet" href="style/normalize.css">
+    <link rel="stylesheet" href="style/skeleton.css">
+    <link rel="stylesheet" href="style/style.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="menu row">
+                <div class="two columns logo">
+                    logo
+                </div>
+                <nav class="nine columns">
+                    <div class="btn">
+                        Menu
+                    </div>
+                    <ul>
+                        <li><a href="#">LATEST</a></li>
+                        <li class="slash">/</li>
+                        <li><a href="#">CHAMPIONSHIP</a></li>
+                        <li class="slash">/</li>
+                        <li><a href="#">RESULTS</a></li>
+                        <li class="slash">/</li>
+                        <li><a href="#">LIVE TIMING</a></li>
+                        <li class="slash">/</li>
+                        <li><a href="#">TICKETS</a></li>
+                        <li class="slash">/</li>
+                        <li><a href="#">STORE</a></li>
+                        <li class="slash">/</li>
+                        <li><a href="#">VIDEO</a></li>
+                    </ul>
+                </nav>
+                <div class="one column">
+                    login
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <section>
+        <div class="bg">
+            <div class="container row">
+                <div class="placeholder six columns">
+                    
+                </div>
+
+                <div class="calendar four columns"></div>
+
+                <div class="ad two columns">
+                    <span id="ad-close">X</span>
+                    <img src="http://placehold.it/200x600" alt="">
+                </div>
+            </div>
+        </div>
+
+        <div class="latest">
+            <div class="container">
+                <h3>Latest</h3>
+                <div class="row">
+                    <div class="six columns">
+                        <img src="http://placehold.it/300x600" alt="" class="lg-pic">
+                        <article>
+                            <h5>Title</h5>
+                            <p>2016/01/01</p>
+                            <hr>
+                            Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                        </article>
+                    </div>
+                    <div class="three columns">
+                        <img src="http://placehold.it/300x300" alt="">
+                        <article>
+                            <h5>Title</h5>
+                            <p>2016/01/01</p>
+                            <hr>
+                            Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                        </article>
+                    </div>
+                    <div class="three columns">
+                        <img src="http://placehold.it/300x300" alt="">
+                        <article>
+                            <h5>Title</h5>
+                            <p>2016/01/01</p>
+                            <hr>
+                            Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                        </article>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="three columns">
+                        <img src="http://placehold.it/300x300" alt="">
+                        <article>
+                            <h5>Title</h5>
+                            <p>2016/01/01</p>
+                            <hr>
+                            Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                        </article>
+                    </div>
+                    <div class="three columns">
+                        <img src="http://placehold.it/300x300" alt="">
+                        <article>
+                            <h5>Title</h5>
+                            <p>2016/01/01</p>
+                            <hr>
+                            Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                        </article>
+                    </div>
+                    <div class="three columns">
+                        <img src="http://placehold.it/300x300" alt="">
+                        <article>
+                            <h5>Title</h5>
+                            <p>2016/01/01</p>
+                            <hr>
+                            Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                        </article>
+                    </div>
+                    <div class="three columns">
+                        <img src="http://placehold.it/300x300" alt="">
+                        <article>
+                            <h5>Title</h5>
+                            <p>2016/01/01</p>
+                            <hr>
+                            Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                        </article>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        
+    </footer>
+    
+
+    <!--CLNDR TEMPLATE-->
+    <div id="mini-clndr">
+        <script id="mini-clndr-template" type="text/template">
+
+        <div class="controls row">
+            <div class="clndr-previous-button one column">&lsaquo;</div><div class="month ten columns"><%= month %></div><div class="clndr-next-button one column">&rsaquo;</div>
+        </div>
+
+        <div class="days-container">
+            <div class="days">
+                <div class="headers">
+                    <% _.each(daysOfTheWeek, function(day) { %><div class="day-header"><%= day %></div><% }); %>
+                </div>
+                <% _.each(days, function(day) { %><div class="<%= day.classes %>" id="<%= day.id %>"><%= day.day %></div><% }); %>
+            </div>
+        </div>
+        </script>
+    </div>
+    <!--/CLNDR TEMPLATE-->
+
+    <script src="bower_components/jquery/dist/jquery.min.js"></script>
+    <script src="bower_components/underscore/underscore-min.js"></script>
+    <script src="bower_components/moment/moment.js"></script>
+    <script src="bower_components/clndr/clndr.min.js"></script>
+    <script src="js/script.js"></script>
+</body>
+</html>
