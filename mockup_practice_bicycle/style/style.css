@@ -1,0 +1,703 @@
+/*GENERAL*/
+body {
+    background: #f7f7f7;
+    font-family: 'Lato', sans-serif;
+    overflow-x: hidden; 
+}
+
+h4 {
+    letter-spacing:  0.1em;
+}
+
+.body {
+    position: relative;
+    left: 0px;
+    transition: 0.5s ease-in-out;
+}
+
+#menu {
+    display: none;
+}
+
+label {
+    position: fixed;
+    z-index: 1000;
+    right: 0px;
+    top: 30px;
+    display: none;
+    height: 50px;
+    width: 50px;
+    cursor: pointer;
+
+    font-family: "fontAwesome";
+    font-size: 40px;
+
+    transition: 0.5s ease-in-out;
+}
+
+label:hover {
+    color: #64c29e;
+}
+
+/*HEADER*/
+header {
+    background: url("../images/header.png");
+    background-size: cover;
+    background-position: center;
+    height: 700px;
+}
+
+header {
+    text-align: center;
+}
+
+header nav {
+    width: 100vw;
+    /*position: fixed;*/
+    z-index: 1000;
+
+    transition: 0.5s ease-in-out;
+}
+
+header nav ul {
+    margin: 0px;
+    margin-left: -20px;
+    padding: 0px;
+}
+
+header nav ul li {
+    display: inline-block;
+    margin: 40px;
+}
+
+header nav ul li a {
+    color: #000;
+    font-weight: bold;
+    text-decoration: none;
+    
+    transition: 0.5s ease-in-out;
+}
+
+header nav ul li a:link {
+    text-decoration: none;
+}
+
+header nav ul li a:hover {
+    color: #64c29e;
+    text-decoration: none;
+}
+
+header .logo {
+    position: absolute;
+    left: 10px;
+    top: 10px;
+    display: none;
+}
+
+/*ABOUT*/
+.about-us {
+    text-align: center;
+    min-height: 470px;
+
+    position: relative;
+}
+
+.about-us .container {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.about-us .container .row img {
+    margin-bottom: 20px;
+}
+
+.about-us .container h4 {
+    margin-bottom: 20px;
+    font-weight: bold;
+}
+
+.about-us .container p {
+    line-height: 2em;
+    color: #848789;
+}
+
+/*WORK*/
+.work .row {
+    min-height: 600px;
+}
+
+.work .bike-one .col-md-8 {
+    background: #000;
+    background-image: url("../images/bike_one.png");
+    background-size: cover;
+    background-position: center;
+
+    position: relative;
+    min-height: 600px;
+}
+
+.work .bike-one .col-md-8 img {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.work .row .col-md-4 {
+    padding: 0px;
+}
+
+.work .row .col-md-4 .row {
+    min-height: 400px;
+    position: relative;
+}
+
+.work .row .col-md-4 .row .text-box {
+    text-align: center;
+    padding: 60px;
+
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.work .row .col-md-4 .row .text-box img {
+    margin-bottom: 10px;
+}
+
+.work .row .col-md-4 .row .text-box h4 {
+    font-weight: bold;
+}
+
+.work .row .col-md-4 .row .text-box p {
+    text-align: left;
+    line-height: 2em;
+    color: #848789;
+}
+
+.work .row .col-md-4 .row .text-box hr {
+    height: 1px;
+    width: 50px;
+    margin-top: 30px;
+    background: #CCC;
+    border: none;
+}
+
+.work .bike-one .col-md-4 .sm-img {
+    background: url("../images/bike_one_saddle.png");
+    background-position: center;
+    background-size: cover;
+    height: 200px;
+}
+
+.work .bike-two .col-md-4 .sm-img {
+    background: url("../images/bike_two_saddle.png");
+    background-position: center;
+    background-size: cover;
+    height: 200px;
+}
+
+.work .bike-two .col-md-8 {
+    background: #000;
+    background-image: url("../images/bike_two.png");
+    background-position: center;
+    background-size: cover;
+
+    position: relative;
+    min-height: 600px;
+}
+
+.work .bike-two .col-md-8 img {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+
+    transform: translate(-50%, -50%);
+}
+
+.work .bike-three .left-pic {
+    background: #000;
+    background-image: url("../images/bike_three_left.png");
+    background-position: center;
+    background-size: cover;
+
+    min-height: 600px;
+
+    position: relative;
+}
+
+.work .bike-three .left-pic img {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.work .bike-three .sm-pic {
+    background: #000;
+    background-image: url("../images/bike_three_rim.png");
+    background-position: center;
+    background-size: cover;
+
+    min-height: 200px;
+}
+
+.work .bike-three .right-pic {
+    background: #000;
+    background-image: url("../images/bike_three_right.png");
+    background-position: center;
+    background-size: cover;
+
+    min-height: 600px;
+}
+
+.arrow {
+    position: absolute;
+    bottom: -13px;
+    left: 50%;
+    transform: rotate(45deg) translateX(-50%);
+    height: 15px;
+    width: 15px;
+    background: #f7f7f7;
+}
+
+/*TWITTER*/
+.twitter {
+    text-align: center;
+    min-height: 470px;
+
+    position: relative;
+}
+
+.twitter .container {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.twitter .container .row img {
+    margin-bottom: 20px;
+}
+
+.twitter .container h4 {
+    margin-bottom: 20px;
+    font-weight: bold;
+    letter-spacing: 0.1em;
+}
+
+.twitter .container h4 span {
+    margin-left: 10px;
+    font-weight: 300;
+    color: #AAA;
+}
+
+.twitter .container i {
+    font-size: 1.5em;
+    line-height: 1.5em;
+    color: #848789;
+}
+
+.twitter .container .row ul {
+    position: relative;
+    bottom: -100px;
+    left: 50%;
+    transform: translateX(-50%);
+    margin-left: -15px;
+}
+
+.twitter .container .row ul li {
+    list-style: none;
+    display: inline-block;
+    margin: 3px;
+}
+
+.twitter .container .row ul li a div {
+    height: 12px;
+    width: 12px;
+    border: 1px solid #AAA;
+    border-radius: 50%;
+}
+
+.twitter .container .row ul li:nth-child(1) a div {
+    background: #AAA;
+}
+
+.twitter .container .row ul li a:hover div {
+    background: #AAA;
+}
+
+/*SHOP*/
+.shop .row {
+    height: 530px;
+    background: #000;
+}
+
+.shop .row .col-md-4 {
+    padding: 0px;
+}
+
+.shop .row .col-md-4 a .item-s {
+    position: relative;
+    height: 265px;
+    width: 50%;
+
+    background-size: cover;
+    background-position: center;
+
+    float: left;
+    clear: right;
+}
+
+.shop .row .col-md-4 a .item-m {
+    position: relative;
+    height: 265px;
+    width: 100%;
+    float: left;
+    clear: right;
+
+    background-size: cover;
+    background-position: center;
+}
+
+.shop .row .col-md-4 a .item-t {
+    position: relative;
+    width: 50%;
+    height: 530px;
+
+    float: left;
+    clear: right;
+
+    background-size: cover;
+    background-position: center;
+}
+
+.shop .row .shop-left a .one {
+    background-image: url("../images/shop_one.png");
+}
+
+.shop .row .shop-left a .two {
+    background-image: url("../images/shop_two.png");
+}
+
+.shop .row .shop-left a .item-m {
+    background-image: url("../images/shop_three.png");
+}
+
+.shop .row .shop-mid a .one {
+    background-image: url("../images/shop_four.png");
+}
+
+.shop .row .shop-mid a .two {
+    background-image: url("../images/shop_five.png");
+}
+
+.shop .row .shop-right a .item-m {
+    background-image: url("../images/shop_six.png");
+}
+
+.shop .row .shop-right a .one {
+    background-image: url("../images/shop_seven.png");
+}
+
+.shop .row .shop-right a .two {
+    background-image: url("../images/shop_eight.png");
+}
+
+.shop .row .col-md-4 a div .msk {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+
+    background: rgba(112,183,155, 0.0);
+    transition: 0.5s ease-in-out;
+}
+
+.shop .row .col-md-4 a div .msk span {
+    position: absolute;
+
+    left: 50%;
+    top: 50%;
+
+    transform: translate(-50%, -50%);
+    color: rgba(255,255,255,0);
+    font-size: 1.1em;
+    font-weight: bold;
+    transition: 0.5s ease-in-out;
+}
+
+.shop .row .col-md-4 a:hover div .msk {
+    background: rgba(112,183,155, 0.8);
+}
+
+.shop .row .col-md-4 a:hover div .msk span {
+    color: rgba(255,255,255,1);
+}
+
+.shop .shop-bottom {
+    min-height: 200px;
+    width: 100%;
+    background: #282f35;
+    float: left;
+    position: relative;
+}
+
+.shop .shop-bottom button {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+    border: 1px solid #FFF;
+    background: none;
+    color: #FFF;
+    font-weight: bold;
+    letter-spacing: 0.2em;
+    padding: 15px 60px;
+
+    transition: 0.5s ease-in-out;
+}
+
+.shop .shop-bottom button:hover {
+    background: #FFF;
+    color: #282f35;
+}
+
+/*MAILING*/
+.mailing .row {
+    height: 455px;
+    width: 100vw;
+    position: relative;
+    float: left;
+    background: #FFF;
+}
+
+.mailing .row .col-md-4 {
+    position: absolute;
+    text-align: center;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.mailing .row .col-md-4 img {
+    margin-bottom: 10px;
+}
+
+.mailing .row .col-md-4 h3 i {
+    color: #848789;
+
+}
+
+.mailing .row .col-md-4 form {
+    margin-top: 35px;
+}
+
+.mailing .row .col-md-4 form div {
+    width: 80%;
+    height: 60px;
+    padding-right: 10px;
+    float: left;
+}
+
+.mailing .row .col-md-4 form div input {
+    height: 100%;
+    width: 100%;
+    border: 1px #CCC solid;
+    padding: 20px;
+    font-size: 1.2em;
+    font-style: italic;
+}
+
+.mailing .row .col-md-4 form button {
+    height: 60px;
+    width: 20%;
+    float: right;
+    border: none;
+    background: #64c29e;
+
+    color: #FFF;
+    font-weight: 300;
+    font-size: 1.5em;
+    letter-spacing: 0.1em;
+}
+
+/*FOOTER*/
+footer {
+    height: 250px;
+    width: 100%;
+    float: left;
+}
+
+footer .col-md-4 {
+    position: relative;
+    min-height: 250px;
+
+    text-align: center;
+}
+
+footer .col-md-4 .address-wrap {
+    width: 50%;
+    position: absolute;
+    right: 0px;
+    top: 50%;
+    transform: translateY(-50%);
+    text-align: left;
+
+    color: #848789;
+}
+
+footer .col-md-4 .address-wrap h5 {
+    font-weight: bold;
+    margin-bottom: 0px;
+}
+
+footer .col-md-4 .address-wrap p {
+    font-style: italic;
+}
+
+footer .col-md-4 ul {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    margin: 0px;
+    padding: 0px;
+    width: 100%;
+}
+
+footer .col-md-4 ul li {
+    display: inline-block;
+    margin: 5px;
+}
+
+footer .col-md-4 ul li a {
+    font-family: "fontAwesome";
+    color: #FFF;
+    border-radius: 50%;
+
+    display: block;
+    height: 35px;
+    width: 35px;
+    font-size: 1.5em;
+    line-height: 35px;
+}
+
+footer .col-md-4 ul li a:hover {
+    text-decoration: none;
+}
+
+footer .col-md-4 ul li .tw {
+    background: #78cdf0;
+}
+
+footer .col-md-4 ul li .fb {
+    background: #537bbd;
+}
+
+footer .col-md-4 ul li .pt {
+    background: #eb5755;
+}
+
+footer .col-md-4 .creator {
+    position: absolute;
+    left: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #848789;
+    text-align: left;
+}
+
+
+/*MEDIA QUERY*/
+@media screen and (max-width: 950px) {
+    .work .row .col-sm-4 .row .text-box {
+        padding: 25px;
+        margin-left: 15px;
+    }
+}
+
+@media screen and (max-width: 767px) {
+    label {
+        display: block;
+    }
+    
+    header {
+        height: 500px;
+    }
+
+    header .logo {
+        display: block;
+    }
+    
+    header nav {
+        position: fixed;
+        right: -150px;
+        background: #FFF;
+        width: 150px;
+        height: 100%;
+        padding-left: 20px;
+    }
+
+    header nav ul li {
+        display: block;
+    }
+
+    header nav ul li img {
+        display: none;
+    }
+
+    /*ABOUT*/
+    .about-us .container {
+        width: 100%;
+    }
+
+    /*WORK*/
+
+    /*Twitter*/
+    .twitter .container {
+        width: 100%;
+    }
+
+    /*MAILING*/
+    .mailing {
+        padding-left: 15px;
+    }
+
+    /*footer*/
+    footer .col-md-4 {
+        min-height: 80px;
+    }
+
+    footer .col-md-4 .address-wrap {
+        text-align: center;
+        left: 50%;
+        top: 70%;
+        transform: translate(-50%, -50%);
+        width: 100%;
+    }
+
+    footer .col-md-4 .creator {
+        text-align: center;
+        left: 50%;
+        top: 40%;
+        transform: translate(-50%, -50%);
+        width: 100%;
+    }
+}
+
+#menu:checked ~ .body header nav {
+    right: 0px;
+}
+
+#menu:checked ~ .body {
+    left: -150px;
+}
+
+#menu:checked ~ .body label {
+    right: 150px;
+}
+
+

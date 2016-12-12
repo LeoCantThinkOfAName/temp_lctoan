@@ -1,0 +1,353 @@
+body {
+    width: 1600px;
+    margin: 0 auto;
+    font-family: 'Open Sans', sans-serif;
+}
+
+.L-shape-content {
+    background: #FFF;
+    width: 1200px;
+    height: 700px;
+    font-weight: 300;
+}
+
+.L-shape-content .left {
+    width: 400px;
+    height: 700px;
+    background: #f26522;
+    color: #FFF;
+    float: left;
+
+    padding: 20px 40px;
+    box-sizing: border-box;
+}
+
+.L-shape-content .left h2 {
+    font-weight: 300;
+}
+
+.L-shape-content .pic {
+    height: 350px;
+    width: 800px;
+    float: left;
+}
+
+.L-shape-content .content {
+    height: 350px;
+    width: 800px;
+    float: left;
+    color: #3a4d69;
+
+    padding: 25px 50px;
+    box-sizing: border-box;
+}
+
+.L-shape-content .content h2 {
+    font-weight: normal;
+}
+
+/*HEADER*/
+header {
+    height: 1100px;
+    background: rgba(0,0,0,0.2);
+    background-image: url("../images/bg.png");
+    background-blend-mode: overlay;
+    background-size: contain;
+    padding: 50px;
+
+    position: relative;
+}
+
+header nav ul {
+    margin: 0px;
+    padding: 0px;
+}
+
+header nav ul li {
+    display: inline-block;
+    margin: 0px 25px;
+}
+
+header nav ul li a {
+    color: #FFF;
+    text-decoration: none;
+    padding-bottom: 10px;
+}
+
+header nav ul li a:hover {
+    border-bottom: 1px solid #f26522;
+}
+
+header .title {
+    color: #FFF;
+    margin-top: 450px;
+    margin-left: 25px;
+}
+
+header .title h1 {
+    font-weight: 300;
+    font-size: 50px;
+    line-height: 50px;
+}
+
+header .title h3 {
+    width: 500px;
+    font-weight: 300;
+    color: #CCC;
+}
+
+header .label {
+    color: #FFF;
+    font-size: 20px;
+    font-weight: bolder;
+    letter-spacing: 5px;
+
+    position: absolute;
+    right: 50px;
+    top: 80px;
+
+    transform: rotate(90deg);
+}
+
+header .label span {
+    color: #f26522;
+}
+
+/*TWITTER*/
+.twitter {
+    position: relative;
+    top: -350px;
+    left: 400px;
+}
+
+.twitter .pic {
+    background: #f26522;
+    background-image: url("../images/pic1.png");
+    background-position: top;
+    background-size: cover;
+    background-blend-mode: multiply;
+}
+
+.twitter .content .tweet {
+    color: #CCC;
+    margin-top: 50px;
+}
+
+.twitter .content .tweet span {
+    font-family: "fontAwesome";
+    margin-right: 10px;
+    font-size: 30px;
+}
+
+/*LOCATION*/
+.location {
+    float: left;
+    height: 650px;
+    margin-top: -350px;
+    box-sizing: border-box;
+    padding: 50px 75px;
+
+    color: #3a4d69;
+}
+
+.location h2 {
+    font-size: 35px;
+    font-weight: 300;
+}
+
+.location p {
+    float: left;
+    width: 50%;
+    padding-right: 50px;
+    box-sizing: border-box;
+}
+
+.location p span {
+    color: #CCC;
+}
+
+/*ABOUT*/
+.about {
+    clear: left;
+    position: relative;
+    height: 1250px;
+}
+
+.about .about-bg {
+    position: absolute;
+    top: 0px;
+    height: 800px;
+    width: 100%;
+    background: url("../images/pic2.png");
+    background-size: cover;
+    background-position: bottom;
+}
+
+.about .wrapper {
+    position: relative;
+    width: 1400px;
+    left: 200px;
+    top: 350px;
+}
+
+.about .wrapper .title {
+    background: #f26522;
+    height: 450px;
+    width: 33.333%;
+    padding: 35px 75px;
+
+    box-sizing: border-box;
+}
+
+.about .wrapper .title h2 {
+    color: #FFF;
+    font-size: 50px;
+    line-height: 50px;
+    font-weight: 300;
+}
+
+.about .wrapper .profile {
+    position: absolute;
+    top: 0px;
+    left: 33.333%;
+    width: 33.333%;
+    height: 450px;
+    overflow: hidden;
+}
+
+.about .wrapper .profile img {
+    width: 100%;
+}
+
+.about .wrapper .content {
+    position: absolute;
+    background: #f26522;
+    height: 450px;
+}
+
+.about .wrapper .content p {
+    width: 50%;
+    padding: 75px;
+    float: left;
+    box-sizing: border-box;
+    color: #FFF;
+}
+
+.about .wrapper .content p:first-child {
+    padding-right: 40px;
+}
+
+.about .wrapper .content p:nth-child(2) {
+    padding-left: 35px;
+}
+
+/*CONTACT*/
+.contact {
+    height: 200px;
+    color: #FFF;
+    padding-left: 200px;
+}
+
+.contact .contact-wrapper {
+    background: #323339;
+    height: 100%;
+    padding: 30px 50px;
+    box-sizing: border-box;
+}
+
+.contact h2 {
+    font-weight: 300;
+    font-size: 35px;
+    margin: 0px;
+    margin-bottom: 15px;
+}
+
+.contact input {
+    height: 50px;
+    width: 250px;
+    margin-right: 10px;
+    padding: 0px 30px;
+    color: #888;
+    box-sizing: border-box;
+    border: 1px solid #FFF;
+}
+
+.contact input:last-child {
+    width: 200px;
+    background: none;
+    color: #FFF;
+}
+
+/*LAST*/
+.lastSection {
+    position: relative;
+    width: 1400px;
+    left: 200px;
+}
+
+.lastSection .bg {
+    background: url("../images/pic3.png");
+    background-position: bottom;
+    height: 800px;
+    width: 100%;
+}
+
+.lastSection .L-shape-content {
+    position: absolute;
+    top: 600px;
+}
+
+.lastSection .L-shape-content .pic {
+    background: #f26522;
+    background-image: url("../images/pic4.png");
+    background-blend-mode: multiply;
+}
+
+/*FOOTER*/
+footer {
+    background: #323339;
+    height: 500px;
+    position: relative;
+    top: 480px;
+}
+
+footer .footer-list {
+    float: left;
+    width: 200px;
+    padding: 25px 50px;
+
+    box-sizing: border-box;
+}
+
+footer .footer-list p {
+    color: #f26522;
+}
+
+footer .footer-list ul {
+    margin: 0px;
+    padding: 0px;
+}
+
+footer .footer-list ul  li {
+    list-style: none;
+    margin-top: 10px;
+}
+
+footer .footer-list ul li a {
+    color: #CCC;
+    text-decoration: none;
+
+    transition: 0.5s ease-in-out;
+}
+
+footer .footer-list ul li a:hover {
+    color: #FFF;
+}
+
+footer .copyright {
+    width: 100%;
+    color: #666;
+    float: left;
+    padding: 50px 50px;
+    box-sizing: border-box;
+}

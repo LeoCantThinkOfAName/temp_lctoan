@@ -1,0 +1,436 @@
+/*GENERAL*/
+body {
+    font-family: 'Raleway', sans-serif;
+}
+
+/*HEADER*/
+header {
+    height: 1000px;
+    position: relative;
+    background: #F7F7F7;
+}
+
+header .title {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+header .title .title-wrapper {
+    position: relative;
+    height: 500px;
+    width: 600px;
+}
+
+header .title .title-wrapper h1 {
+    font-size: 60px;
+    text-align: right;
+    color: #b3964e;
+
+    position: absolute;
+    top: 0px;
+    left: 0px;
+
+    letter-spacing: -2px;
+}
+
+header .title .title-wrapper .slide {
+    height: 100%;
+    width: 70%;
+    background: url("../images/CG.jpg") #000;
+    opacity: 1;
+    background-size: cover;
+    background-blend-mode: luminosity;
+    filter: grayscale(100%);
+    position: absolute;
+    top: 0px;
+    left: 25%;
+
+    transition: 1s ease-in-out;
+}
+
+header .title .title-wrapper .frame {
+    height: 90%;
+    width: 60%;
+    border: 1px solid #b3964e;
+    position: absolute;
+    right:0px;
+    bottom: -30px;
+}
+
+header .search {
+    position: absolute;
+    right: 30px;
+    top: 30px;
+}
+
+header .search .input {
+    border: none;
+    border-bottom: 1px solid #999;
+    background: none;
+
+    width: 0px;
+    height: 30px;
+    outline: none;
+}
+
+header .search .button {
+    border: none;
+    background: none;
+    font-family: "fontAwesome";
+    color: #999;
+    height: 35px;
+    outline: none;
+}
+
+header button {
+    position: absolute;
+    bottom: 50%;
+    left: 50%;
+    transform: translateX(-50%);
+    margin-left: -200px;
+    margin-bottom: -250px;
+
+    border: 1px solid #b3964e;
+    color: #b3964e;
+    font-size: 30px;
+    font-family: "fontAwesome";
+    background: none;
+    width: 50px;
+    height: 50px;
+    box-sizing: border-box;
+
+    transition: 0.5s ease-in-out;
+}
+
+header button:hover {
+    font-size: 40px;
+}
+
+/*ABOUT*/
+.about {
+    height: 500px;
+    min-height: 500px;
+    padding: 50px 0px;
+    box-sizing: border-box;
+}
+
+.about .about-wrapper {
+    width: 80%;
+    max-width: 1000px;
+    height: 100%;
+    margin: 0 auto;
+    position: relative;
+}
+
+.about .about-wrapper .pic {
+    height: 100%;
+    width: 40%;
+    box-sizing: border-box;
+    float: left;
+}
+
+.about .about-wrapper .pic div {
+    width: 100%;
+    height: 100%;
+    background: url("../images/anishkapoor.jpg") #000;
+    background-size: cover;
+    background-position: center;
+    background-blend-mode: luminosity;
+    filter: grayscale(100%);
+}
+
+.about .about-wrapper .description {
+    float: left;
+    padding: 50px;
+    padding-right: 0px;
+    padding-top: 100px;
+    width: 60%;
+    box-sizing: border-box;
+}
+
+.about .about-wrapper .name {
+    color: #b3964e;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    top: 10px;
+}
+
+.about .about-wrapper .name h2 {
+    margin: 0px;
+    font-size: 40px;
+}
+
+/*GALLERY*/
+.gallery {
+    background: #F7F7F7;
+    padding: 100px 0px;
+    clear: left;
+}
+
+.gallery .gallery-wrapper {
+    width: 80%;
+    max-width: 1000px;
+    margin: 0 auto;
+    position: relative;
+}
+
+.gallery .gallery-wrapper h2 {
+    color: #b3964e;
+    font-size: 40px;
+    margin: 0px;
+    position: absolute;
+    top: -50px;
+}
+
+.gallery .gallery-wrapper .piece {
+    height: 500px;
+    padding: 50px 0px;
+    box-sizing: border-box;
+    position: relative;
+}
+
+.gallery .gallery-wrapper .piece .pic {
+    height: 100%;
+    width: 40%;
+    float: right;
+    position: relative;
+}
+
+.gallery .gallery-wrapper .piece .pic .img {
+    background: #000;
+    background-position: center;
+    background-size: cover;
+    filter: grayscale(80%);
+    height: 100%;
+    width: 100%;
+    position: absolute;
+
+    transition: 0.5s ease-in-out;
+}
+
+.gallery .gallery-wrapper .piece .pic .frame {
+    position: absolute;
+    height: 90%;
+    width: 90%;
+    border: 1px solid #b3964e;
+}
+
+.gallery .gallery-wrapper .piece .description {
+    width: 60%;
+    padding-right: 50px;
+    float: left;
+    box-sizing: border-box;
+    height: 100%;
+    
+    position: relative;
+}
+
+.gallery .gallery-wrapper .piece .description .content {
+    width: 100%;
+    position: absolute;
+    padding-right: 50px;
+    box-sizing: border-box;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.gallery .gallery-wrapper .piece .more {
+    position: absolute;
+    bottom: 0px;
+    left: 0px;
+    width: 100px;
+}
+
+.gallery .gallery-wrapper .piece .more a {
+    text-decoration: none;
+    color: #888;
+}
+
+.gallery .gallery-wrapper .piece .more a:hover {
+    color: #000;
+}
+
+.gallery .gallery-wrapper .piece:nth-child(odd) .more {
+    left: 100%;
+    transform: translateX(-100%);
+}
+
+.gallery .gallery-wrapper .piece:nth-child(odd) .description .content {
+    padding-right: 0px;
+    padding-left: 50px;
+}
+
+.gallery .gallery-wrapper .piece:nth-child(odd) .pic {
+    float: left;
+}
+
+.gallery .gallery-wrapper .piece:nth-child(odd) .pic .frame {
+    right: -20px;
+    bottom: -20px;
+}
+
+.gallery .gallery-wrapper .piece:nth-child(even) .pic .frame {
+    left: -20px;
+    bottom: -20px;
+}
+
+
+.gallery .gallery-wrapper .piece .pic .img:hover {
+    filter: grayscale(0%);
+}
+
+.gallery .gallery-wrapper button {
+    border: 1px solid #b3964e;
+    background: none;
+    height: 50px;
+    width: 50px;
+    color: #b3964e;
+    font-size: 40px;
+    line-height: 40px;
+    font-weight: 300;
+    position: absolute;
+    bottom: -50px;
+    left: 50%;
+    transform: translateX(-50%);
+
+    transition: 0.5s ease-in-out;
+}
+
+.gallery .gallery-wrapper button:hover {
+    font-size: 50px;
+    line-height: 50px;
+}
+
+/*FOOTER*/
+footer {
+    height: 300px;
+    text-align: center;
+    color: #999;
+    position: relative;
+}
+
+footer .copyright {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+/*MEDIA QUERY*/
+@media screen and (max-width: 800px) {
+    .about .about-wrapper {
+        width: 100%;
+        padding: 0px 15px;
+        box-sizing: border-box;
+    }
+
+    .gallery .gallery-wrapper {
+        width: 100%;
+        padding: 0px 15px;
+        box-sizing: border-box;
+    }
+}
+
+@media screen and (max-width: 650px) {
+    header {
+        height: 600px;
+    }
+
+    header .title {
+        height: 100%;
+        width: 100%;
+    }
+
+    header .title .title-wrapper {
+        height: 80%;
+        width: 90%;
+        top: 70px;
+        left: 20px;
+    }
+
+    header .title .title-wrapper .slide {
+        width: 80%;
+        left: 15%;
+    }
+
+    header .title .title-wrapper .frame {
+        width: 70%;
+        bottom: -4%;
+        right: 1%;
+    }
+
+    header button {
+        left: 10%;
+        margin-left: 0px;
+        width: 40px;
+        height: 40px;
+    }
+
+    header .title .title-wrapper h1 {
+        font-size: 45px;
+    }
+
+    .about {
+        max-height: 800px;
+    }
+
+    .about .about-wrapper .pic {
+        width: 100%;
+        height: 50%;
+    }
+
+    .about .about-wrapper .name {
+        top: 45%;
+        width: 100%;
+        text-align: center;
+    }
+
+    .about .about-wrapper .description {
+        width: 100%;
+        padding: 0px;
+        padding-top: 30px;
+        padding-bottom: 30px;
+    }
+
+    .gallery .gallery-wrapper .piece {
+        height: auto;
+        overflow: hidden;
+        margin-bottom: 10px;
+    }
+
+    .gallery .gallery-wrapper .piece .pic {
+        width: 100%;
+        height: 300px;
+    }
+
+    .gallery .gallery-wrapper .piece .pic .frame {
+        display: none;
+    }
+
+    .gallery .gallery-wrapper .piece .description {
+        width: 100%;
+        padding: 0px;
+        float: left;
+    }
+
+    .gallery .gallery-wrapper .piece .description .content {
+        position: static;
+        width: 100%;
+        padding: 0px;
+        transform: translateY(0);
+    }
+
+    .gallery .gallery-wrapper .piece .more {
+        left: 100%;
+        bottom: -50px;
+        transform: translateX(-100%);
+    }
+
+    .gallery .gallery-wrapper .piece:nth-child(odd) .description .content {
+        padding: 0px;
+    }
+}
+
